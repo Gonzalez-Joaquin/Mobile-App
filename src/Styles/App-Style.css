@@ -1,0 +1,26 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Centra los items hijos al medio y en caso de mas de uno, uno alado del otro */
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Centra los items hijos al medio y en caso de mas de uno, uno debajo del otro */
+
+.grid {
+  display: grid;
+  place-items: center;
+}
