@@ -1,9 +1,10 @@
+import { Text } from './Components/Typography/Typography'
 import './Styles/App-Style.css'
 
 function App() {
   return (
     <>
-      Mobile App
+      <Text type={'h1'} style_type={'text-title'} content={'HOla'} styles_color={'text-violeta'} />
     </>
   )
 }

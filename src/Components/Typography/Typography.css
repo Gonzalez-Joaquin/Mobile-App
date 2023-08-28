@@ -1,0 +1,73 @@
+/* ---- Defaults ---- */
+
+.text-title,
+.text-subtitle,
+.text-label,
+.text-p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+/* ---- text-type ---- */
+
+.text-title {
+  font-family: "Inter", sans-serif;
+}
+
+.text-subtitle {
+  font-family: "Inter", sans-serif;
+}
+
+.text-label {
+  font-family: "Inter", sans-serif;
+}
+
+.text-p {
+  font-family: "Inter", sans-serif;
+  user-select: text;
+}
+
+/* ---- text-transform ---- */
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+/* ---- text-color ---- */
+
+.text-gris {
+  color: var(--gris-azulado);
+}
+
+.text-violeta {
+  color: var(--violeta);
+}
+
+.text-blanco {
+  color: var(--blanco);
+}
+
+/* ---- text-size ---- */
+
+.text-small {
+  font-size: 0.8em;
+}
+
+.text-medium {
+  font-size: 1.5em;
+}
+
+.text-large {
+  font-size: 2em;
+}
+
+.text-auto {
+  font-size: 100%;
+}
