@@ -3,7 +3,7 @@ import './Styles/App-Style.css'
 function App() {
   return (
     <>
-      Mobile App
+      Mobile
     </>
   )
 }
