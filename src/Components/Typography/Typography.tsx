@@ -4,13 +4,13 @@ import './Typography.css'
 interface TextProps {
     type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'label',
 
-    style_type: 'text-title' | 'text-subtitle' | 'text-label' | 'text-p',
+    style_type: 'text-title' | 'text-subtitle' | 'text-label' | 'text-p' | 'text-button',
 
     styles_color?: 'text-gris' | 'text-violeta' | 'text-blanco',
 
     style_transform?: 'text-uppercase' | 'text-capitalize',
 
-    size?: 'text-small' | 'text-medium' | 'text-large' | 'text-auto',
+    size?: 'text-extra-small' | 'text-small' | 'text-medium' | 'text-large' | 'text-auto',
 
     content: string,
 }
