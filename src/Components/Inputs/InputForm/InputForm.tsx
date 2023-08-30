@@ -8,15 +8,17 @@ interface Props {
     placeHolder?: string,
 
     label: string,
+
+    onChange: (newValue: string) => void,
 }
 
-export const InputForm = ({ type, label, placeHolder }: Props) => {
+export const InputForm = ({ type, label, placeHolder, onChange }: Props) => {
     return (
         <>
             {type === 'checkbox' && (
                 <div className="formFiel-inputs check flex">
                     <div className="checkbox-wrapper-4">
-                        <input className="inp-cbx" id={label} type="checkbox" />
+                        <input className="inp-cbx" id={label} type="checkbox" onChange={e => onChange(e.target.value)} />
                         <label className="cbx" htmlFor={label}>
                             <span><svg width="12px" height="10px"><use href="#check-4"></use></svg></span><span>{label}</span>
                         </label>
@@ -32,7 +34,7 @@ export const InputForm = ({ type, label, placeHolder }: Props) => {
                 type !== 'checkbox' && (
                     <div className="formFiel-inputs flex">
                         <Text type={'label'} style_type={'text-label'} content={label} size={'text-extra-small'} styles_color={'text-gris'} style_transform={'text-capitalize'} />
-                        <input type={type} name={label} id={label} className="inputForm" placeholder={placeHolder} />
+                        <input type={type} name={label} id={label} className="inputForm" placeholder={placeHolder} onChange={e => onChange(e.target.value)} autoComplete="off" />
                     </div>
                 )
             }
