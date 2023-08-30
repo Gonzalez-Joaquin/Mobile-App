@@ -1,14 +1,28 @@
 import { useState } from 'react'
-import { Text } from './Components/Typography/Typography'
-import { LoadingScreen } from './Page/LoadingScreen/LoadingScreen'
+
+import { Welcome } from './Pages/Welcome/Welcome'
 import { Login } from './Pages/Login/Login'
+import { StartScreen } from './Pages/StartScreen/StartScreen'
+
 import './Styles/App-Style.css'
 
 function App() {
-  
-  const [page, setPage] = useState(Boolean)
-  
-  return page? <Login /> : <LoadingScreen /> 
+
+  const [page, setPage] = useState('start')
+
+  return (
+    <>
+      {page === 'start' && (
+        <StartScreen onClick={() => setPage('login')} />
+      )}
+      {page === 'login' && (
+        <Login onClick={() => setPage('welcome')} />
+      )}
+      {page === 'welcome' && (
+        <Welcome />
+      )}
+    </>
+  )
 }
 
 export default App

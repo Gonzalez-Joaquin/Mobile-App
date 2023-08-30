@@ -1,11 +1,15 @@
 import { useState } from "react"
-import { Button } from "../../../Components/Buttons/Button"
-import { IconCompany } from "../../../Components/Icon Company/IconCompany"
-import { InputForm } from "../../../Components/Inputs/InputForm/InputForm"
-import { Links } from "../../../Components/LInks/Links"
-import { Text } from "../../../Components/Typography/Typography"
+import { Button } from "../../Components/Buttons/Button"
+import { IconCompany } from "../../Components/Icon Company/IconCompany"
+import { InputForm } from "../../Components/Inputs/InputForm/InputForm"
+import { Links } from "../../Components/LInks/Links"
+import { Text } from "../../Components/Typography/Typography"
 
-export const LoginForm = () => {
+interface Props {
+    onClick: React.MouseEventHandler<HTMLButtonElement>
+}
+
+export const LoginForm = ({ onClick }: Props) => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -31,7 +35,7 @@ export const LoginForm = () => {
                         <InputForm label={'Recordame'} type={'checkbox'} onChange={(e: string) => setCheckBox(e)} />
                         <Links value={'Recordar contraseña'} onClick={() => console.log('recordar contraseña')} />
                     </div>
-                    <Button type_style={"violeta"} type={"submit"} value={"Ingresar"} onClick={action} />
+                    <Button type_style={"violeta"} type={"submit"} value={"Ingresar"} onClick={onClick} />
                 </div>
                 <div className="formField social flex">
                     <div className="formFiel social-item shapeText flex">
