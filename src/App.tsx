@@ -1,12 +1,14 @@
+import { useState } from 'react'
 import { Text } from './Components/Typography/Typography'
+import { LoadingScreen } from './Page/LoadingScreen/LoadingScreen'
+import { Login } from './Pages/Login/Login'
 import './Styles/App-Style.css'
 
 function App() {
-  return (
-    <>
-      <Text type={'h1'} style_type={'text-title'} content={'hola'} styles_color={'text-violeta'} />
-    </>
-  )
+  
+  const [page, setPage] = useState(Boolean)
+  
+  return page? <Login /> : <LoadingScreen /> 
 }
 
 export default App

@@ -1,4 +1,4 @@
-import { Logo } from '../../Layout/Logo/Logo'
+import { Logo } from '../../Layouts/Logo/Logo'
 import './LoadingScreen.css'
 
 export const LoadingScreen = () => {
