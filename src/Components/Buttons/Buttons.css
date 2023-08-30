@@ -1,0 +1,44 @@
+/* Button - Default */
+
+.btn {
+  background: 0;
+  border: 0;
+  outline: 0;
+
+  width: 100%;
+  height: 39.678px;
+  border-radius: 4.509px;
+  border: 2px solid var(--violeta);
+
+  letter-spacing: 1px;
+
+  transition: ease 0.2s;
+}
+
+/* Button - Violeta */
+
+.btn.violeta {
+  background: var(--violeta);
+}
+
+/* Button - Blanco */
+
+.btn.blanco {
+  background: var(--blanco);
+  & .text-blanco {
+    color: var(--violeta);
+  }
+}
+
+/* Button - Inactivo */
+
+.btn.inactivo {
+  background: var(--violeta);
+  opacity: 0.6;
+}
+
+/* Btn Flex */
+
+.btn.flex {
+  gap: 10px;
+}

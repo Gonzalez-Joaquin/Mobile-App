@@ -1,0 +1,115 @@
+.loginArticle {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-image: var(--gardiente3);
+}
+
+.loginArticle.flex {
+  flex-direction: column;
+}
+
+.loginArticle-logo {
+  top: 0;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 20%;
+}
+
+.loginArticle-form {
+  bottom: 0;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 0%;
+  background: var(--blanco);
+  border-radius: 16px 16px 0px 0px;
+  animation: easeIn 0.5s ease-out forwards;
+}
+
+.loginArticle-form.flex {
+  flex-direction: column;
+}
+
+.formField {
+  padding-inline: 36.04px;
+  width: 100%;
+  animation: easeInFormField 0.5s ease-out forwards;
+}
+
+.formField.flex {
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.formField.form.flex {
+  height: 65%;
+}
+
+.formField.social.flex {
+  height: 35%;
+}
+
+.formFiel-item {
+  width: 100%;
+}
+
+.formFiel-item.flex {
+  justify-content: space-between;
+}
+
+.formFiel.social-item.social {
+  width: 100%;
+}
+
+.formFiel.social-item.social.flex {
+  gap: 2.4px;
+}
+
+.formFiel.formFiel.social-item.text {
+  width: 100%;
+}
+
+.formFiel.social-item.text.flex {
+  justify-content: space-between;
+}
+
+.formFiel.social-item.shapeText {
+  position: relative;
+  width: 100%;
+
+  & .text-title {
+    padding-inline: 14px;
+    background: var(--blanco);
+    z-index: 2;
+  }
+}
+
+.lineLogin-shape {
+  position: absolute;
+  width: 100%;
+  height: 0.902px;
+  background: #a2a7ad;
+}
+
+@keyframes easeIn {
+  0% {
+    height: 0%;
+  }
+
+  100% {
+    height: 80%;
+  }
+}
+
+@keyframes easeInFormField {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
