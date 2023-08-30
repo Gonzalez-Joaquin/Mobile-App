@@ -1,0 +1,5 @@
+.welcomediv {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
