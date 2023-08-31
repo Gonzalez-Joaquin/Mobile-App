@@ -52,7 +52,7 @@
   opacity: 0;
   visibility: hidden;
 
-  animation: wAContentFadeIn 1s 0.5s ease-out forwards;
+  animation: wAContentFadeIn 0.7s 0.5s ease-out forwards;
 }
 
 .welcomeContent.flex {
@@ -63,7 +63,7 @@
 .welcomeContent.flex > .text {
   opacity: 0;
   transform: translateX(-20%);
-  animation: TextFadeIn 0.5s 1s ease-out forwards;
+  animation: TextFadeIn 0.5s 0.7s ease-out forwards;
 }
 
 .welcomeContent.flex > .text.flex {
@@ -75,7 +75,7 @@
   width: 100%;
   opacity: 0;
   transform: scale(98%);
-  animation: ItemsFadeIn 0.5s 1.2s ease-out forwards;
+  animation: ItemsFadeIn 0.5s 1s ease-out forwards;
 }
 
 .welcomeContent.flex > .img {

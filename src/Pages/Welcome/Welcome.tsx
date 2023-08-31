@@ -4,7 +4,11 @@ import { Header } from "../../Layouts/Header/Header"
 import './Welcome.css'
 import { LoginLogo } from "../../Layouts/Login Layout/LoginLogo"
 
-export const Welcome = () => {
+interface Props {
+    onClick: React.MouseEventHandler<HTMLButtonElement>
+}
+
+export const Welcome = ({ onClick }: Props) => {
     return (
         <>
             <article className="welcomeArticle flex">
@@ -12,8 +16,8 @@ export const Welcome = () => {
                     <LoginLogo />
                 </div>
                 <div className="welcomeArticle-container flex">
-                    <Header />
-                    <WelcomeContent />
+                    <Header header="welcome" />
+                    <WelcomeContent onClick={onClick} />
                 </div>
             </article>
         </>

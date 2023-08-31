@@ -1,7 +1,11 @@
 import { Button } from "../../Components/Buttons/Button"
 import { Text } from "../../Components/Typography/Typography"
 
-export const WelcomeContent = () => {
+interface Props {
+    onClick: React.MouseEventHandler<HTMLButtonElement>
+}
+
+export const WelcomeContent = ({ onClick }: Props) => {
     return (
         <>
             <article className="welcomeContent flex">
@@ -13,7 +17,7 @@ export const WelcomeContent = () => {
                     <Text type="p" style_type="text-p" content="Comienza escaneando el QR de la sucursal" />
                 </div>
                 <div className="button">
-                    <Button onClick={() => console.log('aki')} type="button" size={'auto'} type_style="violeta" value="Comenzar" />
+                    <Button onClick={onClick} type="button" size={'auto'} type_style="violeta" value="Comenzar" />
                 </div>
             </article>
         </>

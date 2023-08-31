@@ -6,17 +6,17 @@ interface TextProps {
 
     style_type: 'text-title' | 'text-subtitle' | 'text-label' | 'text-p' | 'text-button',
 
-    styles_color?: 'text-gris' | 'text-violeta' | 'text-blanco',
+    styles_color?: 'text-gris' | 'text-violeta' | 'text-blanco' | 'text-gris-oscuro',
 
     style_transform?: 'text-uppercase' | 'text-capitalize',
 
-    size?: 'text-extra-small' | 'text-small' | 'text-medium' | 'text-large' | 'text-auto',
+    size?: 'text-extra-small' | 'text-small' | 'text-pre-medium' | 'text-medium' | 'text-large' | 'text-auto',
 
     content: string,
 }
 
 export const Text = (props: TextProps) => {
-    const classNames = ` ${props.style_type || ''} ${props.style_transform || ''} ${props.styles_color || 'text-primary'} ${props.size || ''}`;
+    const classNames = ` ${props.style_type || ''} ${props.style_transform || ''} ${props.styles_color || 'text-gris'} ${props.size || ''}`;
 
     return React.createElement(props.type, { className: classNames }, props.content);
 }

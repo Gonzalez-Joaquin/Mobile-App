@@ -1,0 +1,43 @@
+.companysArticle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--gardiente3);
+}
+
+.companysArticle.flex {
+  flex-direction: column;
+}
+
+.companysArticle-content.card {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 35%;
+}
+
+.companysArticle-content.content {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding-inline: 36px;
+  border-radius: 16px 16px 0px 0px;
+  background: var(--blanco);
+  animation: cAContentEaseIn 0.5s forwards;
+}
+
+.companysArticle-content.content.flex {
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+@keyframes cAContentEaseIn {
+  0% {
+    height: 100%;
+  }
+
+  100% {
+    height: 65%;
+  }
+}
