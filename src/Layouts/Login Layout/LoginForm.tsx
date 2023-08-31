@@ -4,12 +4,9 @@ import { IconCompany } from "../../Components/Icon Company/IconCompany"
 import { InputForm } from "../../Components/Inputs/InputForm/InputForm"
 import { Links } from "../../Components/LInks/Links"
 import { Text } from "../../Components/Typography/Typography"
+import { Link } from "react-router-dom"
 
-interface Props {
-    onClick: React.MouseEventHandler<HTMLButtonElement>
-}
-
-export const LoginForm = ({ onClick }: Props) => {
+export const LoginForm = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -35,7 +32,9 @@ export const LoginForm = ({ onClick }: Props) => {
                         <InputForm label={'Recordame'} type={'checkbox'} onChange={(e: string) => setCheckBox(e)} />
                         <Links value={'Recordar contraseña'} onClick={() => console.log('recordar contraseña')} />
                     </div>
-                    <Button type_style={"violeta"} type={"submit"} value={"Ingresar"} onClick={onClick} />
+                    <Link to={'/Welcome'}>
+                        <Button type_style={"violeta"} type={"submit"} value={"Ingresar"} onClick={() => console.log('')} />
+                    </Link>
                 </div>
                 <div className="formField social flex">
                     <div className="formFiel social-item shapeText flex">
@@ -58,7 +57,7 @@ export const LoginForm = ({ onClick }: Props) => {
                         <Links value={'Registrate Aquí'} onClick={() => console.log('recordar contraseña')} />
                     </div>
                 </div>
-            </form>
+            </form >
         </>
     )
 }

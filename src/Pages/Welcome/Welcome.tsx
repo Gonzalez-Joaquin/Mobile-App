@@ -1,14 +1,11 @@
 import { WelcomeContent } from "../../Layouts/Welcome Layout/WelcomeContent"
 import { Header } from "../../Layouts/Header/Header"
 
-import './Welcome.css'
 import { LoginLogo } from "../../Layouts/Login Layout/LoginLogo"
 
-interface Props {
-    onClick: React.MouseEventHandler<HTMLButtonElement>
-}
+import './Welcome.css'
 
-export const Welcome = ({ onClick }: Props) => {
+export const Welcome = () => {
     return (
         <>
             <article className="welcomeArticle flex">
@@ -17,7 +14,7 @@ export const Welcome = ({ onClick }: Props) => {
                 </div>
                 <div className="welcomeArticle-container flex">
                     <Header header="welcome" />
-                    <WelcomeContent onClick={onClick} />
+                    <WelcomeContent />
                 </div>
             </article>
         </>

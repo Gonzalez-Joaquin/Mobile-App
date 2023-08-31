@@ -1,19 +1,18 @@
+import { Link } from 'react-router-dom'
 import { Button } from '../../Components/Buttons/Button'
 import { Logo } from '../../Layouts/Logo/Logo'
 import './StartScreen.css'
 
-interface Props {
-  onClick: React.MouseEventHandler<HTMLButtonElement>
-}
-
-export const StartScreen = ({ onClick }: Props) => {
+export const StartScreen = () => {
   return (
     <section className='logoSection flex'>
       <div className="startScreen-logo">
         <Logo />
       </div>
       <div className="startScreen-button">
-        <Button type_style={'violeta'} type={'button'} value={'Ingresar'} onClick={onClick} />
+        <Link to="/Login">
+          <Button type_style={'violeta'} type={'button'} value={'Ingresar'} onClick={() => console.log('')} />
+        </Link>
       </div>
     </section>
   )

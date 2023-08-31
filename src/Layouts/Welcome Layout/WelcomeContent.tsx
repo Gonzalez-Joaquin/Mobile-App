@@ -1,11 +1,8 @@
+import { Link } from "react-router-dom"
 import { Button } from "../../Components/Buttons/Button"
 import { Text } from "../../Components/Typography/Typography"
 
-interface Props {
-    onClick: React.MouseEventHandler<HTMLButtonElement>
-}
-
-export const WelcomeContent = ({ onClick }: Props) => {
+export const WelcomeContent = () => {
     return (
         <>
             <article className="welcomeContent flex">
@@ -17,7 +14,9 @@ export const WelcomeContent = ({ onClick }: Props) => {
                     <Text type="p" style_type="text-p" content="Comienza escaneando el QR de la sucursal" />
                 </div>
                 <div className="button">
-                    <Button onClick={onClick} type="button" size={'auto'} type_style="violeta" value="Comenzar" />
+                    <Link to={'/Company'}>
+                        <Button onClick={() => console.log('')} type="button" size={'auto'} type_style="violeta" value="Comenzar" />
+                    </Link>
                 </div>
             </article>
         </>
