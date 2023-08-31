@@ -1,12 +1,13 @@
-import { UserIcon } from "../../Components/SVG/UserIcon"
-
+import { Icon } from '../../Components/Icon/Icon'
 import './Header.css'
 
 export const Header = () => {
     return (
         <>
             <header className="header flex">
-                <UserIcon />
+                <button type="button" className="userButton flex">
+                    <Icon icon='user' />
+                </button>
             </header>
         </>
     )

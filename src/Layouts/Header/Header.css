@@ -6,3 +6,33 @@
 .header.flex {
   justify-content: flex-start;
 }
+
+.userButton {
+  background: 0;
+  border: 0;
+  outline: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--gris-claro2);
+
+  opacity: 0;
+  transform: rotate(180deg);
+
+  & .icon {
+    color: var(--gris-claro);
+  }
+
+  animation: userButton linear 0.7s 0.7s forwards;
+}
+
+@keyframes userButton {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
