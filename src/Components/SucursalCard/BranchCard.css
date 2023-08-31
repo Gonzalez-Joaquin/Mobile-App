@@ -1,0 +1,51 @@
+.toggle {
+    display:none;
+}
+
+.togglelabel {
+    display: flex;
+}
+
+  .collapsiblecontent {
+    max-height: 0px;
+    overflow: hidden;
+  
+    transition: max-height .25s ease-in-out;
+  }
+
+  .toggle:checked + .togglelabel + .collapsiblecontent {
+    max-height: 100vh;
+  }
+
+.branchcard {
+    width: 345px;
+    border-radius: 6px;
+    background-color: lightblue;
+}
+
+.companyimg {
+    width: 82px;
+    height: 82px;
+}
+
+.company {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.branch {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 20px;
+}
+
+.details {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 16px;
+}
+
+.label {
+    display: flex;
+}
