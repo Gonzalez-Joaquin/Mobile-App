@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { screenSlice } from "./Slices/Screen";
+import { ItemsSlice } from "./Slices/Items";
 
 export const store = configureStore({
     reducer:{
-        screen: screenSlice.reducer
+        screen: ItemsSlice.reducer
     },
 })
 
