@@ -1,0 +1,161 @@
+.pPreviewArticle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--gardiente3);
+}
+
+.pPreviewArticle .hApp-ctn {
+  animation: pPhAppOut 0.7s 0.2s ease-out forwards;
+
+  & .text-blanco {
+    animation: none;
+    opacity: 1;
+    scale: 1;
+  }
+
+  > .userButton {
+    animation: none;
+    opacity: 1;
+  }
+
+  > .hApp-item {
+    animation: none;
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.pPreviewArticle.flex {
+  flex-direction: column;
+}
+
+.pPArticle-content.desc {
+  position: absolute;
+  bottom: 0;
+  padding: 36px;
+  width: 100%;
+  height: 65%;
+  border-radius: 16px 16px 0px 0px;
+  background: var(--blanco);
+
+  animation: pPArticleFadeIn 0.7s 0.2s ease-out forwards;
+}
+
+@keyframes pPArticleFadeIn {
+  0% {
+    height: 65%;
+  }
+  100% {
+    border-radius: 0;
+    height: 100%;
+  }
+}
+
+@keyframes userButtonOut {
+  0% {
+    opacity: 1;
+    rotate: 360deg;
+  }
+
+  100% {
+    opacity: 0;
+    rotate: 0deg;
+  }
+}
+
+@keyframes itemOut {
+  0% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 0;
+  }
+}
+
+@keyframes textBlancoOut {
+  0% {
+    scale: 1;
+    opacity: 1;
+  }
+
+  100% {
+    scale: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes pPhAppOut {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.pPArticle.desc-item {
+  opacity: 0;
+  animation: pPArticleDescItem 0.7s 0.2s ease-out forwards;
+}
+
+@keyframes pPArticleDescItem {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.pPArticle-content.desc.flex {
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.pPArticle.desc-item {
+  width: 100%;
+}
+
+.pPArticle.desc-item.flex {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.pPArticle.desc-item.buttons.flex {
+  gap: 40px;
+}
+
+.desc-inside.buttons.flex {
+  gap: 28px;
+}
+
+.pPArticle.desc-inside.first {
+  width: 100%;
+}
+
+.pPArticle.desc-inside.first.flex {
+  justify-content: space-between;
+}
+
+.btn-remove,
+.btn-add {
+  border: 1.379px solid var(--gris-claro2);
+  outline: 0;
+  border-radius: 8.276px;
+  width: 40px;
+  height: 40px;
+  background: var(--blanco);
+}
+
+.btn-add:hover,
+.btn-remove:hover {
+  cursor: pointer;
+
+  & .icon {
+    cursor: pointer;
+  }
+}

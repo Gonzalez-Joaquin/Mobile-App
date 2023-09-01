@@ -11,7 +11,7 @@ export const StartScreen = () => {
       </div>
       <div className="startScreen-button">
         <Link to="/Login">
-          <Button type_style={'violeta'} type={'button'} value={'Ingresar'} onClick={() => console.log('')} />
+          <Button type_style={'violeta'} type={'button'} value={'Ingresar'} />
         </Link>
       </div>
     </section>

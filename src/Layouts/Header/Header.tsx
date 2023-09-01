@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom'
 import { CartCounter } from '../../Components/CartCounter/CartCounter'
 import { Icon } from '../../Components/Icon/Icon'
 import { Text } from '../../Components/Typography/Typography'
 import './Header.css'
 
 interface Props {
-    header: 'welcome' | 'app',
+    header: 'welcome' | 'app' | 'peviewProduct',
 }
 
 const Welcome = () => {
@@ -36,6 +37,18 @@ const App = () => {
     )
 }
 
+const PeviewProduct = () => {
+    return (
+        <>
+            <div className="hPreviewProduct-ctn flex">
+                <Link to={'/Company'}>
+                    <Icon icon="arrow-left" style_color="icon-gris-medio" />
+                </Link>
+            </div>
+        </>
+    )
+}
+
 export const Header = ({ header }: Props) => {
     return (
         <>
@@ -45,6 +58,9 @@ export const Header = ({ header }: Props) => {
                 )}
                 {header === 'app' && (
                     <App />
+                )}
+                {header === 'peviewProduct' && (
+                    <PeviewProduct />
                 )}
             </header>
         </>

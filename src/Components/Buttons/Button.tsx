@@ -16,7 +16,7 @@ interface Props {
 
     value: string
 
-    onClick: React.MouseEventHandler<HTMLButtonElement>
+    onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 export const Button = ({ onClick, type, type_style, value, icon_right, icon_left, size }: Props) => {

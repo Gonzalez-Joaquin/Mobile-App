@@ -103,6 +103,10 @@
   background: #a2a7ad;
 }
 
+.routes-100 {
+  width: 100%;
+}
+
 @keyframes easeIn {
   0% {
     height: 100%;

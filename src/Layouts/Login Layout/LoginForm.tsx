@@ -32,8 +32,8 @@ export const LoginForm = () => {
                         <InputForm label={'Recordame'} type={'checkbox'} onChange={(e: string) => setCheckBox(e)} />
                         <Links value={'Recordar contraseña'} onClick={() => console.log('recordar contraseña')} />
                     </div>
-                    <Link to={'/Welcome'}>
-                        <Button type_style={"violeta"} type={"submit"} value={"Ingresar"} onClick={() => console.log('')} />
+                    <Link to={'/Welcome'} className="routes-100">
+                        <Button type_style={"violeta"} type={"submit"} value={"Ingresar"} />
                     </Link>
                 </div>
                 <div className="formField social flex">

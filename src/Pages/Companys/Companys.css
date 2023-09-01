@@ -24,7 +24,7 @@
   padding-inline: 36px;
   border-radius: 16px 16px 0px 0px;
   background: var(--blanco);
-  animation: cAContentEaseIn 0.5s forwards;
+  animation: cAContentEaseIn 0.7s ease-out forwards;
 }
 
 .companysArticle-content.content.flex {
@@ -38,6 +38,7 @@
   }
 
   100% {
+    opacity: 1;
     height: 65%;
   }
 }

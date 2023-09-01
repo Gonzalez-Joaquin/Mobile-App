@@ -15,7 +15,7 @@ export const WelcomeContent = () => {
                 </div>
                 <div className="button">
                     <Link to={'/Company'}>
-                        <Button onClick={() => console.log('')} type="button" size={'auto'} type_style="violeta" value="Comenzar" />
+                        <Button type="button" size={'auto'} type_style="violeta" value="Comenzar" />
                     </Link>
                 </div>
             </article>

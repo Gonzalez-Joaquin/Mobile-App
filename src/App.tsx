@@ -1,5 +1,5 @@
 import './Styles/App-Style.css'
-import { AppRouter } from './routers/AppRouter'
+import { AppRouter } from './Routers/AppRouter'
 
 export const App = () => {
   return (
