@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { App } from './App.tsx'
-import { store } from './App/store.tsx'
+import { store } from './App/store.ts'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 
