@@ -16,7 +16,7 @@ export interface ItemsState {
 }
 
 export interface Filter {
-    type: 'status' | 'title' | 'default',
+    type: 'title' | 'default',
     value: string
 }
 
