@@ -63,7 +63,9 @@ export const BranchCard = ( props: Props ) => {
         
         <div className="collapsiblecontent">
           <p className='details'><PhoneIcon />{props.branch.phonenumber}</p>
-          <p className='details'><CalendarIcon />{props.branch.schedule}</p>
+          <div className='detailsdiv'>
+          <CalendarIcon /><span className='details'>{props.branch.schedule}</span>
+          </div>
           <p className='details'><MailIcon />{props.branch.email}</p>
         </div>
 

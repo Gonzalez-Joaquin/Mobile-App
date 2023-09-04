@@ -41,18 +41,21 @@
 }
 
 .company {
+    color: #3B456D;
     font-weight: 700;
     font-size: 14px;
     line-height: 20px;
 }
 
 .branch {
+    color: #6A708B;
     font-weight: 600;
     font-size: 11px;
     line-height: 20px;
 }
 
 .details {
+    color: #3B456D;
     width: 269px;
     font-weight: 500;
     font-size: 11px;
@@ -73,4 +76,14 @@
 .arrowanimation {
     transform: rotate(180deg);
 }
+
+.detailsdiv {
+    display:table;
+    width: 230px;
+}
+
+.detailsdiv span, .detailsdiv .icon {
+    display: table-cell;
+}
+
 
