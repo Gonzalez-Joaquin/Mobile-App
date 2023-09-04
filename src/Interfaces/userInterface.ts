@@ -27,8 +27,9 @@ export interface Name {
 }
 
 export interface userState {
+    isLoading: boolean,
     login: Login,
-    user: ApiUser
+    users: ApiUser[]
 }
 
 export interface Login {

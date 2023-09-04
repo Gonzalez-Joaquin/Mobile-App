@@ -4,7 +4,7 @@ import { IconCompany } from "../../Components/Icon Company/IconCompany"
 import { InputForm } from "../../Components/Inputs/InputForm/InputForm"
 import { Links } from "../../Components/LInks/Links"
 import { Text } from "../../Components/Typography/Typography"
-import { Link } from "react-router-dom"
+import { loginWithEmailAndPassword } from "../../Hooks/Users"
 
 export const LoginForm = () => {
 
@@ -14,11 +14,8 @@ export const LoginForm = () => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        action()
-    }
 
-    const action = () => {
-        console.log(email, password, checkBox)
+        loginWithEmailAndPassword(email, password)
     }
 
     return (
@@ -32,9 +29,7 @@ export const LoginForm = () => {
                         <InputForm label={'Recordame'} type={'checkbox'} onChange={(e: string) => setCheckBox(e)} />
                         <Links value={'Recordar contraseña'} onClick={() => console.log('recordar contraseña')} />
                     </div>
-                    <Link to={'/Welcome'} className="routes-100">
-                        <Button type_style={"violeta"} type={"submit"} value={"Ingresar"} />
-                    </Link>
+                    <Button type_style={"violeta"} type={"submit"} value={"Ingresar"} />
                 </div>
                 <div className="formField social flex">
                     <div className="formFiel social-item shapeText flex">

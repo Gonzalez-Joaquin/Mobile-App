@@ -5,7 +5,7 @@ import { items_state } from '../../../Interfaces/ItemsInterface'
 
 const item_intital_state: items_state = {
     isLoading: false,
-    items: [{ cod: 0, title: '', desc: '', price: 0, images: [{ id: 0, image: '' }] }]
+    items: [{ id: 0, title: '', price: '', category: '', description: '', image: '' }]
 }
 
 export const itemsSlice = createSlice({
@@ -16,7 +16,8 @@ export const itemsSlice = createSlice({
             state.isLoading = true
         },
         setItems: (state, action) => {
-            console.log(action)
+            state.isLoading = false
+            state.items = action.payload.items
         },
     }
 })

@@ -22,5 +22,5 @@ interface IImage {
 
 export interface items_state {
     isLoading: boolean,
-    items: Item[]
+    items: ApiItem[]
 }
