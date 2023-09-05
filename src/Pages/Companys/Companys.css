@@ -14,6 +14,7 @@
   position: fixed;
   width: 100%;
   height: 35%;
+  padding-inline: 10px;
 }
 
 .companysArticle-content.content {

@@ -7,11 +7,15 @@
 /* Style_Color */
 
 .icon-gris-clarito {
-  color: var(--gris-clarito);
+  color: var(--gris-claro);
 }
 
 .icon-gris-medio {
   color: var(--gris-medio);
+}
+
+.icon-violeta {
+  color: var(--violeta);
 }
 
 /* Size */

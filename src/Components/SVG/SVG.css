@@ -1,11 +1,6 @@
-.icon {
-    display:inline-block;
-    margin-right: 10px;
-}
-
 .arrow {
-    display:block;
-    position:relative;
-    left: 290px;
-    bottom: 18px;
+  display: block;
+  position: relative;
+  left: 290px;
+  bottom: 18px;
 }
