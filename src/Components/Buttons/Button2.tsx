@@ -7,7 +7,7 @@ interface Props {
     icon: string
 
 
-    onClick: React.MouseEventHandler<HTMLButtonElement>
+    onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 export const Button2 = ({ onClick, icon, textButton, titleButton }: Props) => {

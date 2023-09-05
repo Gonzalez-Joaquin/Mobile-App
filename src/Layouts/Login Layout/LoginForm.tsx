@@ -1,35 +1,65 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "../../Components/Buttons/Button"
 import { IconCompany } from "../../Components/Icon Company/IconCompany"
 import { InputForm } from "../../Components/Inputs/InputForm/InputForm"
 import { Links } from "../../Components/LInks/Links"
 import { Text } from "../../Components/Typography/Typography"
-import { loginWithEmailAndPassword } from "../../Hooks/Users"
+import { useDispatch, useSelector } from "react-redux"
+import { AppDispatch, RootState } from "../../App/store"
+import { loginUser } from "../../App/Slices/User/thunks"
+import { useNavigate } from "react-router-dom"
+import { Loading_Button } from "../../Components/Buttons/Loading_Button"
 
 export const LoginForm = () => {
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const navigate = useNavigate()
+    const user = useSelector((store: RootState) => store.users)
+    const dispatch = useDispatch<AppDispatch>()
+
+    const [loadingState, setLoadingState] = useState(Boolean)
+    const [buttonState, setButtonState] = useState(Boolean)
+    const [userName, setUserName] = useState('johnd')
+    const [password, setPassword] = useState('m38rmF$')
     const [checkBox, setCheckBox] = useState('')
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        loginWithEmailAndPassword(email, password)
+        dispatch(loginUser(userName, password))
     }
+
+    useEffect(() => {
+        if (user.login) {
+            navigate('/Welcome')
+        }
+
+        setLoadingState(user.isLoading)
+
+    }, [user])
+
+    useEffect(() => {
+        if (userName !== '' && password !== '') {
+            setButtonState(true)
+        } else {
+            setButtonState(false)
+        }
+    }, [userName, password])
 
     return (
         <>
             <form className="loginArticle-form flex" onSubmit={handleSubmit}>
                 <div className="formField form flex">
                     <Text type={"h3"} style_type={"text-title"} content={"¡Hola de nuevo!"} size={'text-medium'} styles_color={'text-gris'} />
-                    <InputForm label={'email'} placeHolder="Ingresa tu email" type="email" onChange={(e: string) => setEmail(e)} />
+                    <InputForm label={'Usuario'} placeHolder="Ingresa tu usuario" type="text" onChange={(e: string) => setUserName(e)} />
                     <InputForm label={'contraseña'} placeHolder={'Ingresa tu contraseña'} type={'password'} onChange={(e: string) => setPassword(e)} />
                     <div className="formFiel-item flex">
                         <InputForm label={'Recordame'} type={'checkbox'} onChange={(e: string) => setCheckBox(e)} />
                         <Links value={'Recordar contraseña'} onClick={() => console.log('recordar contraseña')} />
                     </div>
-                    <Button type_style={"violeta"} type={"submit"} value={"Ingresar"} />
+                    <div className="form-field-button flex">
+                        <Loading_Button active={loadingState} />
+                        <Button type_style={buttonState ? 'violeta' : 'inactivo'} type={"submit"} value={"Ingresar"} />
+                    </div>
                 </div>
                 <div className="formField social flex">
                     <div className="formFiel social-item shapeText flex">
@@ -52,7 +82,7 @@ export const LoginForm = () => {
                         <Links value={'Registrate Aquí'} onClick={() => console.log('recordar contraseña')} />
                     </div>
                 </div>
-            </form >
+            </form>
         </>
     )
 }

@@ -4,7 +4,7 @@ import { userState } from "../../../Interfaces/userInterface"
 
 const initialState: userState = {
     isLoading: false,
-    login: { username: '', password: '' },
+    login: false,
     users: [{
         id: 0,
         email: '',
@@ -23,11 +23,14 @@ export const userSlice = createSlice({
         startLoadingUsers: (state) => {
             state.isLoading = true
         },
-        setUsers: (state, action) => {
-            state.isLoading = false,
-                state.users = action.payload.users
+        endLoadingUsers: (state) => {
+            state.isLoading = false
         },
+        loginUserData: (state) => {
+            state.isLoading = false
+            state.login = true
+        }
     }
 })
 
-export const { setUsers, startLoadingUsers } = userSlice.actions
+export const { startLoadingUsers, endLoadingUsers, loginUserData } = userSlice.actions

@@ -100,3 +100,60 @@
 .btn2-content.icon2.flex {
   justify-content: flex-end;
 }
+
+.loading__button {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 39.678px;
+  border-radius: 4.509px;
+  border: 2px solid var(--violeta);
+  background: var(--violeta);
+  transition: ease-out 0.5s;
+}
+
+.loading__button.flex {
+  gap: 1em;
+}
+
+.loading__button.flex.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.shapeLoading {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gris-fondo);
+  animation: buttonLoading 1s infinite alternate;
+}
+
+.shapeLoading:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.shapeLoading:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.shapeLoading:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.shapeLoading:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+@keyframes buttonLoading {
+  0% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 1.2;
+    background: var(--gris-claro2);
+  }
+}

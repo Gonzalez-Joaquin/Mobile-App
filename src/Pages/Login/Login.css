@@ -107,6 +107,11 @@
   width: 100%;
 }
 
+.form-field-button {
+  position: relative;
+  width: 100%;
+}
+
 @keyframes easeIn {
   0% {
     height: 100%;

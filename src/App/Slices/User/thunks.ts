@@ -1,12 +1,32 @@
+import { Dispatch } from "@reduxjs/toolkit"
 import { fakeStoreApi } from "../../../Api/fakeStoreApi"
-import { setUsers, startLoadingUsers } from "./userSlice"
+import { loginUserData, startLoadingUsers, endLoadingUsers } from "./userSlice"
 
-export const fetchUsers = () => {
-    return async (dispatch, getState) => {
+const loginUser = (username: string, password: string) => {
+    return async (dispatch: Dispatch) => {
+
+        const data = { username, password }
+
+        // Set Page loading
         dispatch((startLoadingUsers()))
 
-        const { data } = await fakeStoreApi.get('users')
+        // Post User
+        const response = await fakeStoreApi.post('auth/login', data)
+            .then(res => {
+                return res.status
+            })
+            .catch(() => {
+                alert('Nombre de usuario o contraseña invalidos')
+            })
+            .finally(() => {
+                dispatch(endLoadingUsers())
+            })
 
-        dispatch(setUsers({ users: data }))
+        // Post true
+        if (response === 200) {
+            dispatch((loginUserData()))
+        }
     }
 }
+
+export { loginUser }

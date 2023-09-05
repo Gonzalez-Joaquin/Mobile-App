@@ -8,7 +8,7 @@ export const CompanyContent = () => {
             <div className="companysArticle-content content flex">
                 <Text type={"h3"} style_type={"text-title"} content={"Elige una opción para agregar productos a tu pedido"} styles_color="text-gris-oscuro" size="text-pre-medium" />
                 <Link to={'/ProductPreview'}>
-                    <Button2 icon="ballot" titleButton="Catálogo" textButton="Podrás ver todo el catálogo de productos de esta sucursal" onClick={() => console.log('aki')} />
+                    <Button2 icon="ballot" titleButton="Catálogo" textButton="Podrás ver todo el catálogo de productos de esta sucursal" />
                 </Link>
             </div>
         </>
