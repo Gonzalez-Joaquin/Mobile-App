@@ -1,19 +1,20 @@
-import { Item } from "../../App/store/Slices/Items"
+import { useSelector } from "react-redux"
+import { RootState } from "../../App/store"
 
-interface Props {
-  item: Item
-}
+export const ListItem = () => {
 
-export const ListItem = ( props: Props ) => {
+  const apiItem = useSelector((store: RootState) => store.items.items)
+
+  const item = apiItem[0]
+
   return (
     <div>
-        <div className="listitem">
-            <img className="listitemimg" src={props.item.image} />
-            <p className="listitemtitle">{props.item.title}</p>
-            <p className="listitemid">Código {props.item.id}</p>
-
-            <p className="listitemprice">{props.item.price}</p>
-        </div>
+      <div className="listitem">
+        <img className="listitemimg" src={item.image} />
+        <p className="listitemtitle">{item.title}</p>
+        <p className="listitemid">Código {item.id}</p>
+        <p className="listitemprice">{item.price}</p>
+      </div>
     </div>
   )
 }

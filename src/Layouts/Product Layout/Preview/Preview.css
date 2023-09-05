@@ -5,6 +5,26 @@
   background: var(--gardiente3);
 }
 
+.pPArticle-content.img {
+  width: 100%;
+  height: 30%;
+}
+
+.pParticle-container-image {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  scale: 0.8;
+
+  animation: imagePreview 0.7s 0.2s ease-out forwards;
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .pPreviewArticle .hApp-ctn {
   animation: pPhAppOut 0.7s 0.2s ease-out forwards;
 
@@ -157,5 +177,17 @@
 
   & .icon {
     cursor: pointer;
+  }
+}
+
+@keyframes imagePreview {
+  0% {
+    scale: 0.5;
+    opacity: 0;
+  }
+
+  100% {
+    scale: 1;
+    opacity: 1;
   }
 }

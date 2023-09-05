@@ -5,7 +5,7 @@ import { Text } from '../../Components/Typography/Typography'
 import './Header.css'
 
 interface Props {
-    header: 'welcome' | 'app' | 'peviewProduct',
+    header: 'welcome' | 'app' | 'peviewProduct' | 'catalogue',
 }
 
 const Welcome = () => {
@@ -28,6 +28,23 @@ const App = () => {
                     <Icon icon='user' />
                 </button>
                 <Text type='p' style_type='text-subtitle' size='text-medium' content='Sucursal escaneada' styles_color='text-blanco' />
+                <div className="hApp-item flex">
+                    <Icon icon='shopping-cart' />
+                    <CartCounter />
+                </div>
+            </div>
+        </>
+    )
+}
+
+const Catalogue = () => {
+    return (
+        <>
+            <div className="hApp-ctn flex">
+                <Link to={'/Company'}>
+                    <Icon icon="arrow-left" style_color="icon-gris-medio" />
+                </Link>
+                <Text type='p' style_type='text-subtitle' size='text-medium' content='Catálogo' styles_color='text-gris-oscuro' />
                 <div className="hApp-item flex">
                     <Icon icon='shopping-cart' />
                     <CartCounter />
@@ -61,6 +78,9 @@ export const Header = ({ header }: Props) => {
                 )}
                 {header === 'peviewProduct' && (
                     <PeviewProduct />
+                )}
+                {header === 'catalogue' && (
+                    <Catalogue />
                 )}
             </header>
         </>
