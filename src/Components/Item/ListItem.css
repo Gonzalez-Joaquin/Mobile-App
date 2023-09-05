@@ -1,0 +1,29 @@
+.listitem {
+    
+}
+
+.listitemimg {
+    width: 60px;
+    height: 60px;
+}
+
+.listitemtitle {
+    color: #3B456D;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.listitemid {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #6A708B;
+}
+
+.listitemprice {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #3B456D;
+}
