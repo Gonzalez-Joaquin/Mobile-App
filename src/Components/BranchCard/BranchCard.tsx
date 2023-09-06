@@ -1,20 +1,23 @@
 import { Text } from "../Typography/Typography"
 import { Icon } from "../Icon/Icon"
 
-import { Branch } from "../../Interfaces/BranchInterface"
 import { useState } from "react"
 
 import './BranchCard.css'
 import { useNavigate } from "react-router-dom"
+import { useSelector } from "react-redux"
+import { RootState } from "../../App/store"
 
 interface Props {
-  branch: Branch
+  botonDeSalida?: boolean,
 }
 
-export const BranchCard = ({ branch }: Props) => {
+export const BranchCard = ({ botonDeSalida }: Props) => {
 
   const navigate = useNavigate()
   const [branchMode, setBranchMode] = useState(Boolean)
+
+  const branch = useSelector((store: RootState) => store.branch)
 
   return (
     <div className={`branch-card ${branchMode ? 'open' : ''}`}>
@@ -28,7 +31,7 @@ export const BranchCard = ({ branch }: Props) => {
               <Text type="h3" style_type="text-title" content={branch.company} size="text-small" styles_color="text-gris-oscuro" />
               <Text type="p" style_type="text-p" content={branch.branch} styles_color="text-gris" size="text-extra-small" />
             </div>
-            <div className="card-toggle-data-icon" onClick={() => navigate('/Welcome')}>
+            <div className={`card-toggle-data-icon ${botonDeSalida ? '' : 'inactive'}`} onClick={() => navigate('/Welcome')}>
               <Icon icon="sign-out-alt" style_color="icon-violeta" />
             </div>
           </div>

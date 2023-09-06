@@ -110,3 +110,13 @@
   visibility: visible;
   opacity: 1;
 }
+
+.card-toggle-data-icon {
+  visibility: visible;
+  opacity: 1;
+}
+
+.card-toggle-data-icon.inactive {
+  visibility: hidden;
+  opacity: 0;
+}

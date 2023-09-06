@@ -1,0 +1,15 @@
+.catalogueArticle {
+  width: 100%;
+  height: 100%;
+}
+
+.catalogueArticle.flex {
+  flex-direction: column;
+}
+.catalogue-container {
+  width: 100%;
+}
+
+.catalogue-container.flex {
+  flex-direction: column;
+}
