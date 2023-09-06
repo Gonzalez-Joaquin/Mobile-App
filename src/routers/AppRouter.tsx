@@ -28,7 +28,7 @@ const item = {
 export const AppRouter = () => {
   return (
     <Routes>
-        <Route path="/" element={<BranchCard branch={branch} />} />
+        <Route path="/" element={<ListItem item={item} />} />
         <Route path="/login" element={<Login />} />
     </Routes>
   )
