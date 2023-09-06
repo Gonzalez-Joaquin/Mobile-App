@@ -9,8 +9,8 @@ export const Catalogue = () => {
     return (
         <>
             <article className="catalogueArticle flex">
-                <Header header="catalogue" />
                 <div className="catalogue-container flex">
+                    <Header header="catalogue" />
                     <BranchCard botonDeSalida={false} />
                     <SearchBar />
                     <ProductContainer />

@@ -40,13 +40,13 @@ const App = () => {
 const Catalogue = () => {
     return (
         <>
-            <div className="hApp-ctn flex">
+            <div className="hApp-ctn catalogue-header flex">
                 <Link to={'/Company'}>
                     <Icon icon="arrow-left" style_color="icon-gris-medio" />
                 </Link>
                 <Text type='p' style_type='text-subtitle' size='text-medium' content='Catálogo' styles_color='text-gris-oscuro' />
                 <div className="hApp-item flex">
-                    <Icon icon='shopping-cart' />
+                    <Icon icon='shopping-cart' style_color='icon-gris-medio' />
                     <CartCounter />
                 </div>
             </div>

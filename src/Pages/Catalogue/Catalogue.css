@@ -1,15 +1,82 @@
 .catalogueArticle {
+  position: relative;
   width: 100%;
   height: 100%;
+  background: var(--gardiente3);
 }
 
 .catalogueArticle.flex {
   flex-direction: column;
 }
+
 .catalogue-container {
+  bottom: 0;
+  position: fixed;
+
   width: 100%;
+  height: 100%;
+  max-height: 65%;
+
+  padding-top: 5%;
+  padding-inline: 10px;
+
+  border-radius: 16px 16px 0px 0px;
+
+  background: var(--blanco);
+
+  animation: fadeInCatalogue 1s 0.3s ease-out forwards;
+
+  & .catalogue-header {
+    opacity: 0;
+    animation: headerCatalogue 0.7s 0.7s ease-out forwards;
+  }
+
+  & .branch-card {
+    opacity: 0;
+    animation: headerCatalogue 0.7s 0.9s ease-out forwards;
+  }
+
+  & .searchBar-form {
+    opacity: 0;
+    animation: headerCatalogue 0.7s 1s ease-out forwards;
+  }
 }
 
 .catalogue-container.flex {
   flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-container {
+  position: relative;
+  max-height: 510px;
+  width: 100%;
+  height: 100%;
+  background: var(--blanco);
+}
+
+.product-container.flex {
+  flex-direction: column;
+  gap: 5px;
+}
+
+@keyframes fadeInCatalogue {
+  0% {
+    height: 60%;
+  }
+
+  100% {
+    border-radius: 0;
+    height: 100%;
+    max-height: none;
+  }
+}
+@keyframes headerCatalogue {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

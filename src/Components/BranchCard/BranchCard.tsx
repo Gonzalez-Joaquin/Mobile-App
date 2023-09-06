@@ -41,7 +41,7 @@ export const BranchCard = ({ botonDeSalida }: Props) => {
               <Text type="h4" style_type="text-subtitle" content={branch.address} size="text-extra-small" styles_color="text-gris-oscuro" />
             </div>
             <button type="button" className="toggle-button flex" onClick={() => setBranchMode(!branchMode)} >
-              <Icon icon={`angle-small-down ${branchMode ? 'close' : ''}`} style_color="icon-gris-clarito" />
+              <Icon icon={`angle-small-down ${branchMode ? 'close' : ''}`} style_color="icon-gris-medio" />
             </button>
           </div>
         </div>
