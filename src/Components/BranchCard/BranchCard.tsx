@@ -48,15 +48,15 @@ export const BranchCard = ({ botonDeSalida }: Props) => {
       </div>
       <div className={`card-toggle-active flex ${branchMode ? 'open' : ''}`}>
         <div className="card-active-text flex">
-          <Icon icon='phone-flip' style_color="icon-gris-clarito" />
+          <Icon icon='phone-flip' style_color="icon-gris-medio" />
           <Text type="p" style_type="text-p" content={branch.phonenumber} styles_color="text-gris-oscuro" size="text-extra-small" />
         </div>
         <div className="card-active-text flex">
-          <Icon icon='calendar-day' style_color="icon-gris-clarito" />
+          <Icon icon='calendar-day' style_color="icon-gris-medio" />
           <Text type="p" style_type="text-p" content={branch.schedule} styles_color="text-gris-oscuro" size="text-extra-small" />
         </div>
         <div className="card-active-text flex">
-          <Icon icon='envelope' style_color="icon-gris-clarito" />
+          <Icon icon='envelope' style_color="icon-gris-medio" />
           <Text type="p" style_type="text-p" content={branch.email} styles_color="text-gris-oscuro" size="text-extra-small" />
         </div>
       </div>

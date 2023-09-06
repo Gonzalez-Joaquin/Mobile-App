@@ -102,7 +102,12 @@
   gap: 10px;
 }
 
+.card-active-text {
+  width: 90%;
+}
+
 .card-active-text.flex {
+  justify-content: start;
   gap: 10px;
 }
 

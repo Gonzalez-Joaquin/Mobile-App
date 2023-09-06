@@ -14,7 +14,7 @@ export const AppRouter = () => {
       <Route path="/Welcome" element={<Welcome />} />
       <Route path="/Company" element={<Companys />} />
       <Route path="/Catalogue" element={<Catalogue />} />
-      <Route path="/ProductPreview" element={<Product type={'view'} />} />
+      <Route path="/Aca" element={<Product type={'view'} />} />
     </Routes>
   )
 }

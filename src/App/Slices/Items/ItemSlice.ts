@@ -5,7 +5,7 @@ import { items_state } from '../../../Interfaces/ItemsInterface'
 
 const item_intital_state: items_state = {
     isLoading: false,
-    items: [{ id: 0, title: '', price: '', category: '', description: '', image: '' }]
+    items: [{ id: 0, title: '', price: 0, category: '', description: '', image: '' }]
 }
 
 export const itemsSlice = createSlice({

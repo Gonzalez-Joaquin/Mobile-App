@@ -4,19 +4,6 @@ export interface ApiItem {
     price: number,
     category: string,
     description: string,
-    image: string
-}
-
-export interface Item {
-    cod: number,
-    title: string,
-    desc: string,
-    price: number,
-    images: IImage[],
-}
-
-interface IImage {
-    id: number,
     image: string,
 }
 

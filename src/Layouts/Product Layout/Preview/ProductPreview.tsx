@@ -3,6 +3,9 @@ import { Button } from "../../../Components/Buttons/Button"
 import { Icon } from "../../../Components/Icon/Icon"
 import { Text } from "../../../Components/Typography/Typography"
 import { ApiItem } from "../../../Interfaces/ItemsInterface"
+import { useDispatch } from "react-redux"
+import { incrementItem } from "../../../App/Slices/App /AppSlice"
+import { useNavigate } from "react-router-dom"
 
 interface Props {
     item: ApiItem
@@ -11,6 +14,22 @@ interface Props {
 export const ProductPreview = ({ item }: Props) => {
 
     const [countProduct, setCountProduct] = useState(1)
+    const navigate = useNavigate()
+
+    const dispatch = useDispatch()
+
+    const handleClick = () => {
+        if (countProduct != 1) {
+            for (let i = 0; i < countProduct; i++) {
+                dispatch(incrementItem(item))
+            }
+        } else {
+            dispatch(incrementItem(item))
+        }
+
+        setCountProduct(1)
+        navigate('/Catalogue')
+    }
 
     return (
         <>
@@ -47,7 +66,7 @@ export const ProductPreview = ({ item }: Props) => {
                         </div>
                         <Text type="h3" style_type="text-title" styles_color="text-gris-oscuro" size="text-medium" content={`$${countProduct === 0 ? item.price : item.price * countProduct}`} />
                     </div>
-                    <Button type="button" type_style="violeta" value="Actualizar Carrito" size="auto" />
+                    <Button type="button" type_style="violeta" value="Actualizar Carrito" size="auto" onClick={() => handleClick()} />
                 </div>
             </div>
         </>

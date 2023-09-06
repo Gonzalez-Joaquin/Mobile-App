@@ -1,10 +1,12 @@
+import { useSelector } from "react-redux"
 import { Text } from "../Typography/Typography"
 
 import './CartCounter.css'
+import { RootState } from "../../App/store"
 
 export const CartCounter = () => {
 
-    const value = undefined
+    const value = useSelector((store: RootState) => store.app.carrito).length
 
     return (
         <>

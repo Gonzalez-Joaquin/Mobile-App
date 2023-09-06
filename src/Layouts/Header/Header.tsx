@@ -46,7 +46,9 @@ const Catalogue = () => {
                 </Link>
                 <Text type='p' style_type='text-subtitle' size='text-medium' content='Catálogo' styles_color='text-gris-oscuro' />
                 <div className="hApp-item flex">
-                    <Icon icon='shopping-cart' style_color='icon-gris-medio' />
+                    <Link to={'/Aca'}>
+                        <Icon icon='shopping-cart' style_color='icon-gris-medio' />
+                    </Link>
                     <CartCounter />
                 </div>
             </div>
@@ -58,7 +60,7 @@ const PeviewProduct = () => {
     return (
         <>
             <div className="hPreviewProduct-ctn flex">
-                <Link to={'/Company'}>
+                <Link to={'/Catalogue'}>
                     <Icon icon="arrow-left" style_color="icon-gris-medio" />
                 </Link>
             </div>
