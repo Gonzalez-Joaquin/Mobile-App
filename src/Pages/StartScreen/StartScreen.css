@@ -1,0 +1,38 @@
+.logoSection {
+  width: 100%;
+  height: 100%;
+}
+
+.logoSection.flex {
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.startScreen-logo {
+  transform: translateY(50%);
+  animation: startScreenFadeIn ease 1s forwards;
+}
+
+.startScreen-button {
+  width: 100%;
+  visibility: 0;
+  opacity: 0;
+  padding-inline: 36.04px;
+
+  transform: translateY(-50%);
+
+  animation: startScreenFadeIn ease 1s 1s forwards;
+}
+
+@keyframes startScreenFadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0%);
+  }
+}

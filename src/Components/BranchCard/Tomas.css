@@ -1,0 +1,88 @@
+.branchcard {
+  width: 345px;
+  border-radius: 6px;
+  background-color: white;
+  padding-top: 12px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+}
+
+.togglelabel {
+  display: flex;
+  gap: 17px;
+}
+
+.toggle {
+  display: none;
+}
+
+.companydata {
+  margin-top: 5px;
+}
+
+.collapsiblecontent {
+  max-height: 0px;
+  overflow: hidden;
+
+  transition: max-height 0.25s ease-in-out;
+  transition: margin-top 0.25s ease-in-out;
+}
+
+.toggle:checked + .togglelabel + .collapsiblecontent {
+  max-height: 100vh;
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+.companyimg {
+  width: 82px;
+  height: 82px;
+}
+
+.company {
+  color: #3b456d;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.branch {
+  color: #6a708b;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 20px;
+}
+
+.details {
+  color: #3b456d;
+  width: 269px;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.address {
+  display: table;
+  width: 230px;
+  padding-top: 10px;
+}
+
+.address span,
+.address .icon {
+  display: table-cell;
+  margin-right: 4px;
+}
+
+.arrowanimation {
+  transform: rotate(180deg);
+}
+
+.detailsdiv {
+  display: table;
+  width: 230px;
+}
+
+.detailsdiv span,
+.detailsdiv .icon {
+  display: table-cell;
+}

@@ -58,14 +58,22 @@
   color: var(--blanco);
 }
 
+.text-gris-oscuro {
+  color: var(--gris-oscuro);
+}
+
 /* ---- text-size ---- */
 
 .text-extra-small {
-  width: 12px;
+  font-size: 12px;
 }
 
 .text-small {
   font-size: 16px;
+}
+
+.text-pre-medium {
+  font-size: 18px;
 }
 
 .text-medium {

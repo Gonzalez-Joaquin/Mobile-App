@@ -2,7 +2,7 @@ import './Icon.css'
 
 interface IconProps {
     icon: string,
-    style_color?: 'icon-gris-clarito' | 'icon-gris-medio',
+    style_color?: 'icon-gris-clarito' | 'icon-gris-medio' | 'icon-violeta',
     size?: 'icon-small' | 'icon-medium' | 'icon-large' | 'icon-auto',
 }
 
