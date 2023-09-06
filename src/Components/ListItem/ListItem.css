@@ -1,5 +1,13 @@
 .listitem {
-    
+    width: 345px;
+    background-color: white;
+    padding-top: 12px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
 }
 
 .listitemimg {

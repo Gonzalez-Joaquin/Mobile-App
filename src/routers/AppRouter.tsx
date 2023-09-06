@@ -3,7 +3,7 @@ import { LoadingScreen } from "../Page/LoadingScreen/LoadingScreen"
 import { Login } from "../Pages/Login/Login"
 import { WelcomePage } from "../Page/WelcomePage/WelcomePage"
 import { BranchCard } from "../Components/BranchCard/BranchCard"
-import { ListItem } from "../Components/Item/ListItem"
+import { ListItem } from "../Components/ListItem/ListItem"
 
 const branch = {
   company: "Giannoni",
@@ -28,7 +28,7 @@ const item = {
 export const AppRouter = () => {
   return (
     <Routes>
-        <Route path="/" element={<ListItem item={item} />} />
+        <Route path="/" element={<BranchCard branch={branch} />} />
         <Route path="/login" element={<Login />} />
     </Routes>
   )
