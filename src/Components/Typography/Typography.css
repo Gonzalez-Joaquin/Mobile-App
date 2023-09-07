@@ -50,6 +50,10 @@
   color: var(--gris-azulado);
 }
 
+.text-gris-claro {
+  color: var(--gris-claro);
+}
+
 .text-violeta {
   color: var(--violeta);
 }

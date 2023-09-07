@@ -10,12 +10,33 @@ export const appSlice = createSlice({
     initialState,
     reducers: {
         incrementItem: (state, action) => {
-            state.carrito.push(action.payload)
+            if (state.carrito.find(item => item.id === action.payload.id) === null) {
+                state.carrito = [...state.carrito, { id: action.payload.id, cantidad: 1 }]
+            } else {
+                state.carrito.map(item => {
+                    if (item.id === action.payload.id) {
+                        return { ...item, cantidad: item.cantidad + 1 }
+                    }
+                    return item
+                })
+            }
         },
-        decrementItem: (state, acttion) => {
-            state.carrito.filter(item => item.id === acttion.payload)
+        decrementItem: (state, action) => {
+            if (state.carrito.find(item => item.id === action.payload.id)?.cantidad === 1) {
+                state.carrito = [...state.carrito, { id: action.payload.id, cantidad: 1 }]
+            } else {
+                state.carrito.map(item => {
+                    if (item.id === action.payload.id) {
+                        return { ...item, cantidad: item.cantidad - 1 }
+                    }
+                    return item
+                })
+            }
+        },
+        removeItem: (state, action) => {
+            state.carrito = state.carrito.filter(item => item.id !== action.payload)
         }
     }
 })
 
-export const { incrementItem, decrementItem } = appSlice.actions
+export const { incrementItem, decrementItem, removeItem } = appSlice.actions

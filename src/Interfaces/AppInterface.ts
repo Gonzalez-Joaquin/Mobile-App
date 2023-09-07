@@ -1,5 +1,8 @@
-import { ApiItem } from "./ItemsInterface";
+interface Carrito {
+    id: number,
+    cantidad: number,
+}
 
 export interface appState {
-    carrito: ApiItem[],
+    carrito: Carrito[]
 }

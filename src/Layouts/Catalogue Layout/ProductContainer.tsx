@@ -8,7 +8,7 @@ export const ProductContainer = () => {
     return (
         <div className="product-container flex">
             {
-                //aca irian con el map!
+                // Acá iria el map!
                 // items.map(item => {
                 // <Item item={item} />
                 // })
