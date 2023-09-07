@@ -14,6 +14,35 @@
     transition: width 0.25s
 }
 
+.ItemButtons {
+    position:absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 89px;
+    height: 29px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 23px;
+}
+
+.normalcount {
+    font-family: Inter;
+font-size: 14px;
+font-weight: 600;
+line-height: 17px;
+letter-spacing: 0em;
+text-align: left;
+    width: 7px;
+    color: var(--gris-oscuro)
+}
+
+.deleteitem {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
 .unfocused {
     width: 33px;
     background-color: var(--celeste)
@@ -39,4 +68,8 @@ width: 18px;
 
 .iconshow {
     display: initial;
+}
+
+.textshow {
+    margin-top: 3px;
 }
