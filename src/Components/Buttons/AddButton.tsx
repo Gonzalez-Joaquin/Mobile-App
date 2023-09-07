@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './AddButton.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../App/store'
-import { decrementItem, deleteItem, incrementItem } from '../../App/Slices/App /AppSlice'
+import { decrementItem, removeItem, incrementItem } from '../../App/Slices/App /AppSlice'
 import { ApiItem } from '../../Interfaces/ItemsInterface'
 
 interface Props {
@@ -18,10 +18,8 @@ export const AddButton = ( props: Props ) => {
   let counter = 0
   const dispatch = useDispatch()
     for(let i=0;i<carrito.length;i++){
-      if(carrito[i]===props.item){
-        counter++
-        console.log('count: ' + counter)
-        console.log(props.item.id)
+      if(carrito[i].id===props.item.id){
+        counter = carrito[i].cantidad;
       }
     }
 
@@ -62,6 +60,13 @@ export const AddButton = ( props: Props ) => {
       }
       }
     }, [props.flag])
+
+    useEffect(() => {
+      if(count===0){
+      setButtonState('closed')
+    }
+    }, [count])
+    
     
 
  if(props.type==='catalogue'){
@@ -82,7 +87,7 @@ export const AddButton = ( props: Props ) => {
 else {
   return (
     <div>
-      <svg className='deleteitem' onClick={() => dispatch(deleteItem(props.item))} width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg className='removeItemitem' onClick={() => dispatch(removeItem(props.item))} width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.402978 1.37534L3.80596 4.77832L0.402979 8.1813L1.3752 9.15352L4.77817 5.75054L8.18115 9.15352L9.15337 8.1813L5.75039 4.77832L9.15337 1.37534L8.18115 0.403125L4.77817 3.8061L1.3752 0.403124L0.402978 1.37534Z" fill="#98A0B6"/>
 </svg>
     <div className="ItemButtons">

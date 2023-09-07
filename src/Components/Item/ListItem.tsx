@@ -5,6 +5,7 @@ import { useState } from "react"
 import { incrementItem } from "../../App/Slices/App /AppSlice"
 import './ListItem.css'
 import { ApiItem } from "../../Interfaces/ItemsInterface"
+import { useNavigate } from "react-router-dom"
 
 interface Props {
   item: ApiItem,
