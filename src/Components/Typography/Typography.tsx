@@ -6,7 +6,7 @@ interface TextProps {
 
     style_type: 'text-title' | 'text-subtitle' | 'text-label' | 'text-p' | 'text-button',
 
-    styles_color?: 'text-gris' | 'text-violeta' | 'text-blanco' | 'text-gris-oscuro',
+    styles_color?: 'text-gris' | 'text-violeta' | 'text-blanco' | 'text-gris-oscuro' | 'text-gris-claro',
 
     style_transform?: 'text-uppercase' | 'text-capitalize',
 

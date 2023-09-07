@@ -29,7 +29,9 @@ const App = () => {
                 </button>
                 <Text type='p' style_type='text-subtitle' size='text-medium' content='Sucursal escaneada' styles_color='text-blanco' />
                 <div className="hApp-item flex">
-                    <Icon icon='shopping-cart' />
+                    <Link to={'/Company/Cart'}>
+                        <Icon icon='shopping-cart' style_color='icon-gris-clarito' />
+                    </Link>
                     <CartCounter />
                 </div>
             </div>
@@ -46,7 +48,7 @@ const Catalogue = () => {
                 </Link>
                 <Text type='p' style_type='text-subtitle' size='text-medium' content='Catálogo' styles_color='text-gris-oscuro' />
                 <div className="hApp-item flex">
-                    <Link to={'/Aca'}>
+                    <Link to={'/Catalogue/Cart'}>
                         <Icon icon='shopping-cart' style_color='icon-gris-medio' />
                     </Link>
                     <CartCounter />

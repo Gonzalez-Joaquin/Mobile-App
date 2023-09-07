@@ -115,7 +115,7 @@
 }
 
 .loading__button.flex {
-  gap: 1em;
+  gap: 5px;
 }
 
 .loading__button.flex.active {
@@ -124,8 +124,8 @@
 }
 
 .shapeLoading {
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: var(--gris-fondo);
   animation: buttonLoading 1s infinite alternate;
