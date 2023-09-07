@@ -1,10 +1,8 @@
-import { useDispatch, useSelector } from "react-redux"
-import { RootState } from "../../App/store"
 import { AddButton } from "../Buttons/AddButton"
-import { useState } from "react"
-import { incrementItem } from "../../App/Slices/App /AppSlice"
+
 import './ListItem.css'
 import { ApiItem } from "../../Interfaces/ItemsInterface"
+import { Text } from "../Typography/Typography"
 
 interface Props {
   item: ApiItem,
@@ -12,30 +10,22 @@ interface Props {
   flagsetter: React.Dispatch<React.SetStateAction<number>>
 }
 
-export const ListItem = ( props: Props ) => {
-  
-  let title = props.item.title
-
-  if(title.length > 27){
-    title = title.slice(0, 27) + "..."
-  }
-
-  
-
+export const ListItem = (props: Props) => {
   return (
     <div className="relative">
-      <div className="listitem">
-        <div className="listitemdata">
+      <div className="listitem flex">
+        <div className="listitemdata flex">
+          <div className="listitemimg-container">
             <img className="listitemimg" src={props.item.image} />
-            <div>
-            <p id="listitemtitle" className="listitemtitle">{title}</p>
-            <p className="listitemid">Código {props.item.id}</p>
-            <p className="listitemprice">{props.item.price}</p>
-            </div>
+          </div>
+          <div>
+            <Text type="p" style_type="text-p" content={props.item.title.length > 27 ? `${props.item.title.slice(0, 27)}...` : props.item.title} size="text-extra-small" styles_color="text-gris-oscuro" />
+            <Text type="p" style_type="text-p" content={`Código ${props.item.id}`} size="text-extra-small" styles_color="text-gris-oscuro" />
+            <Text type="p" style_type="text-p" content={`${props.item.price}`} size="text-extra-small" styles_color="text-gris-oscuro" />
+          </div>
         </div>
-        
-        </div>
-        <AddButton item={props.item} flag={props.flag} flagsetter={props.flagsetter} />
+      </div>
+      <AddButton item={props.item} flag={props.flag} flagsetter={props.flagsetter} />
     </div>
   )
 }

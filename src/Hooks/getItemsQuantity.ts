@@ -1,9 +1,6 @@
-import { useSelector } from "react-redux"
-import { RootState } from "../App/store"
+import { Carrito } from '../Interfaces/AppInterface'
 
-const getItemQuantity = (id: number) => {
-    const items = useSelector((store: RootState) => store.app.carrito)
-
+const getItemQuantity = (id: number, items: Carrito[]) => {
     return items.find(item => item.id === id)?.cantidad || 0
 }
 
