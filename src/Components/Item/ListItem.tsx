@@ -35,7 +35,7 @@ export const ListItem = ( props: Props ) => {
         </div>
         
         </div>
-        <AddButton item={props.item} flag={props.flag} flagsetter={props.flagsetter} />
+        <AddButton item={props.item} flag={props.flag} flagsetter={props.flagsetter} type="catalogue" />
     </div>
   )
 }
