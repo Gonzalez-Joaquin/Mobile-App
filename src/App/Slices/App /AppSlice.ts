@@ -12,8 +12,9 @@ export const appSlice = createSlice({
         incrementItem: (state, action) => {
             state.carrito.push(action.payload)
         },
-        decrementItem: (state, acttion) => {
-            state.carrito.filter(item => item.id === acttion.payload)
+        decrementItem: (state, action) => {
+            const index = state.carrito.indexOf(action.payload);
+            state.carrito.splice(index, 1);
         }
     }
 })

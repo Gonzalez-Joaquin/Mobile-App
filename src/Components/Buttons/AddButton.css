@@ -10,7 +10,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 27px;
+    gap: 23px;
+    transition: width 0.25s
+}
+
+.unfocused {
+    width: 33px;
+    background-color: var(--celeste)
 }
 
 .buttonactive {
@@ -24,4 +30,13 @@ font-weight: 600;
 line-height: 20px;
 text-align: center;
 color: var(--gris-clarito);
+width: 18px;
+}
+
+.iconhide {
+    display:none;
+}
+
+.iconshow {
+    display: initial;
 }

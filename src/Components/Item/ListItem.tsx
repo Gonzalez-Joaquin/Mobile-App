@@ -1,20 +1,38 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "../../App/store"
+import { AddButton } from "../Buttons/AddButton"
+import { useState } from "react"
+import { incrementItem } from "../../App/Slices/App /AppSlice"
+import './ListItem.css'
 
 export const ListItem = () => {
+  
 
   const apiItem = useSelector((store: RootState) => store.items.items)
 
   const item = apiItem[0]
+  let title = item.title
+
+  if(title.length > 27){
+    title = title.slice(0, 27) + "..."
+  }
+
+  
 
   return (
-    <div>
+    <div className="relative">
       <div className="listitem">
-        <img className="listitemimg" src={item.image} />
-        <p className="listitemtitle">{item.title}</p>
-        <p className="listitemid">Código {item.id}</p>
-        <p className="listitemprice">{item.price}</p>
-      </div>
+        <div className="listitemdata">
+            <img className="listitemimg" src={item.image} />
+            <div>
+            <p id="listitemtitle" className="listitemtitle">{title}</p>
+            <p className="listitemid">Código {item.id}</p>
+            <p className="listitemprice">{item.price}</p>
+            </div>
+        </div>
+        
+        </div>
+        <AddButton item={item} />
     </div>
   )
 }
