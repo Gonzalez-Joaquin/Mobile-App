@@ -1,5 +1,18 @@
 .listitem {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 345px;
+    height: 99px;
+    background-color: aqua;
+}
+
+.listitemdata {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 19px;
+    margin-right: 30px;
 }
 
 .listitemimg {
@@ -25,5 +38,11 @@
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
+    margin-top: 10px;
     color: #3B456D;
+}
+
+.relative {
+    position: relative;
+    width: 345px;
 }
