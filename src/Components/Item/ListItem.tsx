@@ -4,14 +4,17 @@ import { AddButton } from "../Buttons/AddButton"
 import { useState } from "react"
 import { incrementItem } from "../../App/Slices/App /AppSlice"
 import './ListItem.css'
+import { ApiItem } from "../../Interfaces/ItemsInterface"
 
-export const ListItem = () => {
+interface Props {
+  item: ApiItem,
+  flag: number,
+  flagsetter: React.Dispatch<React.SetStateAction<number>>
+}
+
+export const ListItem = ( props: Props ) => {
   
-
-  const apiItem = useSelector((store: RootState) => store.items.items)
-
-  const item = apiItem[0]
-  let title = item.title
+  let title = props.item.title
 
   if(title.length > 27){
     title = title.slice(0, 27) + "..."
@@ -23,16 +26,16 @@ export const ListItem = () => {
     <div className="relative">
       <div className="listitem">
         <div className="listitemdata">
-            <img className="listitemimg" src={item.image} />
+            <img className="listitemimg" src={props.item.image} />
             <div>
             <p id="listitemtitle" className="listitemtitle">{title}</p>
-            <p className="listitemid">Código {item.id}</p>
-            <p className="listitemprice">{item.price}</p>
+            <p className="listitemid">Código {props.item.id}</p>
+            <p className="listitemprice">{props.item.price}</p>
             </div>
         </div>
         
         </div>
-        <AddButton item={item} />
+        <AddButton item={props.item} flag={props.flag} flagsetter={props.flagsetter} />
     </div>
   )
 }
