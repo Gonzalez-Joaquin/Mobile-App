@@ -6,7 +6,9 @@ import { decrementItem, incrementItem } from '../../App/Slices/App /AppSlice'
 import { ApiItem } from '../../Interfaces/ItemsInterface'
 
 interface Props {
-  item: ApiItem
+  item: ApiItem,
+  flag: number,
+  flagsetter: React.Dispatch<React.SetStateAction<number>>
 }
 
 export const AddButton = ( props: Props ) => {
