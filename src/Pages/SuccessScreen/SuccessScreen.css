@@ -1,9 +1,21 @@
+.screencontainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.closescreen {
+    position: absolute;
+    right: 0px;
+    top: -60px;
+}
+
 .SuccessScreen {
+    position: relative;
     width: 303px;
-    margin-top: 144px;
+    margin-top: 7%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -34,4 +46,10 @@
     line-height: 30px;
     letter-spacing: 0em;
     text-align: center;
+    color: var(--celeste);
+}
+
+.button1 {
+    width: 302.99591064453125px;
+    height: 39.678035736083984px;
 }
