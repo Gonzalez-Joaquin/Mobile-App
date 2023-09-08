@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './AddButton.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../App/store'
-import { decrementItem, removeItem, incrementItem } from '../../App/Slices/App /AppSlice'
+import { decrementItem, incrementItem } from '../../App/Slices/App /AppSlice'
 import { ApiItem } from '../../Interfaces/ItemsInterface'
 import getItemQuantity from '../../Hooks/getItemsQuantity'
 
@@ -42,6 +42,11 @@ export const AddButton = (props: Props) => {
       setButtonState('closed')
     }
   }, [count])
+
+  useEffect(() => {
+    setCount(getItemQuantity(props.item.id, carrito))
+  }, [])
+
 
   useEffect(() => {
     setCount(getItemQuantity(props.item.id, carrito))
