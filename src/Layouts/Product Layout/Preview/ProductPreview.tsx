@@ -4,7 +4,7 @@ import { Icon } from "../../../Components/Icon/Icon"
 import { Text } from "../../../Components/Typography/Typography"
 import { ApiItem } from "../../../Interfaces/ItemsInterface"
 import { useDispatch } from "react-redux"
-import { incrementItem } from "../../../App/Slices/App /AppSlice"
+import { incrementItem } from "../../../App/Slices/App/appSlice"
 import { useNavigate } from "react-router-dom"
 
 interface Props {

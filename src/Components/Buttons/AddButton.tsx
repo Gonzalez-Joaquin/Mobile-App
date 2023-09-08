@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './AddButton.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../App/store'
-import { decrementItem, incrementItem } from '../../App/Slices/App /AppSlice'
+import { decrementItem, incrementItem } from '../../App/Slices/App/appSlice'
 import { ApiItem } from '../../Interfaces/ItemsInterface'
 import getItemQuantity from '../../Hooks/getItemsQuantity'
 

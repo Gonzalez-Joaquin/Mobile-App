@@ -3,7 +3,7 @@ import { ApiItem } from "../../Interfaces/ItemsInterface"
 import { AddButton } from "../Buttons/AddButton"
 
 import './ListItem.css'
-import { removeItem } from "../../App/Slices/App /AppSlice"
+import { removeItem } from "../../App/Slices/App/appSlice"
 
 interface Props {
   item: ApiItem,

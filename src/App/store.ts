@@ -1,8 +1,8 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { itemsSlice } from "./Slices/Items/ItemSlice";
-import { userSlice } from "./Slices/User/userSlice";
-import { branchSlice } from "./Slices/Branch/brachSlice";
-import { appSlice } from "./Slices/App /AppSlice";
+import { configureStore } from "@reduxjs/toolkit"
+import { itemsSlice } from "./Slices/Items/ItemSlice"
+import { userSlice } from "./Slices/User/userSlice"
+import { branchSlice } from "./Slices/Branch/brachSlice"
+import { appSlice } from "./Slices/App/appSlice"
 
 export const store = configureStore({
     reducer: {
