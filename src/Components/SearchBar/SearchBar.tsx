@@ -2,19 +2,33 @@ import { useEffect, useState } from 'react'
 
 import './SearchBar.css'
 import { Icon } from '../Icon/Icon'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '../../App/store'
+import { setSearchedItems } from '../../App/Slices/Search/Search'
 
 export const SearchBar = () => {
 
+    const dispatch = useDispatch()
+    
     const [iconState, setIconState] = useState(true)
-    const [serachValue, setSearchValue] = useState('')
+    const [searchValue, setSearchValue] = useState('')
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
     }
+    const items = useSelector((store: RootState) => store.items.items)
+    
 
     useEffect(() => {
-        serachValue === '' ? setIconState(true) : setIconState(false)
-    }, [serachValue])
+        searchValue === '' ? setIconState(true) : setIconState(false)
+    }, [searchValue])
+
+    
+    
+
+  useEffect(() => {
+       dispatch(setSearchedItems(items.filter(item => item.title.toUpperCase().includes(searchValue.toUpperCase()))))
+  }, [searchValue])
 
     return (
         <>
