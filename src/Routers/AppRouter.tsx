@@ -8,7 +8,6 @@ import { Catalogue } from "../Pages/Catalogue/Catalogue"
 import { Cart } from "../Pages/Cart/Cart"
 import { SuccessScreen } from "../Pages/SuccessScreen/SuccessScreen"
 
-
 export const AppRouter = () => {
   return (
     <Routes>

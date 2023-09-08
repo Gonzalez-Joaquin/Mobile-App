@@ -34,12 +34,12 @@ export const AddButton = ( props: Props ) => {
     
 
     const increment = () => {
-      dispatch(incrementItem(props.item.id))
+      dispatch(incrementItem(props.item))
       setcount(count + 1)
     }
 
     const decrement = () => {
-      dispatch(decrementItem(props.item.id))
+      dispatch(decrementItem(props.item))
       if(count > 0){
       setcount(count - 1)
     }
