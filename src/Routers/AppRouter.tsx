@@ -6,11 +6,12 @@ import { Welcome } from "../Pages/Welcome/Welcome"
 import { Product } from "../Pages/Product/Product"
 import { Catalogue } from "../Pages/Catalogue/Catalogue"
 import { Cart } from "../Pages/Cart/Cart"
+import { SuccessScreen } from "../Pages/SuccessScreen/SuccessScreen"
 
 export const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<StartScreen />} />
+      <Route path="/" element={<SuccessScreen />} />
       <Route path="/Login" element={<Login />} />
       <Route path="/Welcome" element={<Welcome />} />
       <Route path="/Company" element={<Companys />} />

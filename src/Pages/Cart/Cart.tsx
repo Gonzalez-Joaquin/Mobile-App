@@ -6,6 +6,7 @@ import { Button } from "../../Components/Buttons/Button"
 
 import './Cart.css'
 import { CompanyCard } from "../../Layouts/Companys Layout/CompanyCard"
+import { CartContainer } from "../../Layouts/Cart Layout/CartContainer"
 
 interface Props {
     prev: 'company' | 'catalogue'
@@ -25,7 +26,7 @@ export const Cart = ({ prev }: Props) => {
                         </Link>
                     </div>
                     <div className="cartAside-item mid flex">
-
+                        <CartContainer />
                     </div>
                     <div className="cartAside-item bottom flex">
                         <div className="cA-price flex">
