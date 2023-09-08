@@ -12,7 +12,7 @@ export const ProductContainer = () => {
         <div className="product-container">
             <div className="product-content flex">
                 {
-                    items.map(item => <ListItem item={item} key={item.id} flag={flag} flagsetter={setflag} />)
+                    items.map(item => <ListItem item={item} key={item.id} flag={flag} flagsetter={setflag} type="catalogue" />)
                 }
             </div>
         </div>

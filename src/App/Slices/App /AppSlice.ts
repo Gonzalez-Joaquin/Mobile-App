@@ -23,7 +23,7 @@ export const appSlice = createSlice({
         },
         decrementItem: (state, action) => {
             if (state.carrito.find(item => item.id === action.payload)?.cantidad === 1) {
-                state.carrito = [...state.carrito, { id: action.payload, cantidad: 1 }]
+                state.carrito = state.carrito.filter(item => item.id !== action.payload)
             } else {
                 state.carrito = state.carrito.map(item => {
                     if (item.id === action.payload) {

@@ -7,12 +7,25 @@ import { Button } from "../../Components/Buttons/Button"
 import './Cart.css'
 import { CompanyCard } from "../../Layouts/Companys Layout/CompanyCard"
 import { CartContainer } from "../../Layouts/Cart Layout/CartContainer"
+import { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
+import { RootState } from "../../App/store"
+import getItemPrice from "../../Hooks/getItemPrice"
 
 interface Props {
     prev: 'company' | 'catalogue'
 }
 
 export const Cart = ({ prev }: Props) => {
+
+    const carrito = useSelector((store: RootState) => store.app.carrito)
+    const items = useSelector((store: RootState) => store.items.items)
+    const [price, setPrice] = useState(0)
+
+    useEffect(() => {
+        setPrice(getItemPrice(items, carrito))
+    }, [carrito])
+
     return (
         <>
             <aside className="cartAside">
@@ -28,10 +41,10 @@ export const Cart = ({ prev }: Props) => {
                     <div className="cartAside-item mid flex">
                         <CartContainer />
                     </div>
-                    <div className="cartAside-item bottom flex">
+                    <div className={`cartAside-item bottom flex ${carrito.length > 0 ? 'active' : ''}`}>
                         <div className="cA-price flex">
                             <Text type="h4" style_type="text-subtitle" styles_color="text-gris-claro" content="Total" size="text-pre-medium" />
-                            <Text type="h4" style_type="text-subtitle" styles_color="text-gris-oscuro" content={'$23.000,00'} />
+                            <Text type="h4" style_type="text-subtitle" styles_color="text-gris-oscuro" content={`${price}`} />
                         </div>
                         <Button type="button" type_style="violeta" size="auto" value="Confiarmar pedido" />
                     </div>

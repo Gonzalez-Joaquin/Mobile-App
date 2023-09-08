@@ -1,75 +1,75 @@
 .AddButton {
-    position:absolute;
-    bottom: 0px;
-    right: 0px;
-    width: 33px;
-    height: 33px;
-    border-radius:   6px 0px 6px 0px;
-    background-color: #8381FF;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 23px;
-    transition: width 0.25s
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 33px;
+  height: 33px;
+  border-radius: 6px 0px 6px 0px;
+  background-color: #8381ff;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 23px;
+  transition: width 0.25s;
 }
 
 .ItemButtons {
-    position:absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 89px;
-    height: 29px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 23px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 89px;
+  height: 29px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 23px;
 }
 
 .normalcount {
-    font-family: Inter;
-font-size: 14px;
-font-weight: 600;
-line-height: 17px;
-letter-spacing: 0em;
-text-align: left;
-    width: 7px;
-    color: var(--gris-oscuro)
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 7px;
+  color: var(--gris-oscuro);
 }
 
 .deleteitem {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .unfocused {
-    width: 33px;
-    background-color: var(--celeste)
+  width: 33px;
+  background-color: var(--celeste);
 }
 
 .buttonactive {
-    width: 109px
+  width: 109px;
 }
 
 .addbuttontext {
-    font-family: Inter;
-font-size: 19px;
-font-weight: 600;
-line-height: 20px;
-text-align: center;
-color: var(--gris-clarito);
-width: 18px;
+  font-family: Inter;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  color: var(--gris-clarito);
+  width: 18px;
 }
 
 .iconhide {
-    display:none;
+  display: none;
 }
 
 .iconshow {
-    display: initial;
+  display: initial;
 }
 
 .textshow {
-    margin-top: 3px;
+  margin-top: 3px;
 }

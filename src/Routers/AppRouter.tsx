@@ -11,14 +11,15 @@ import { SuccessScreen } from "../Pages/SuccessScreen/SuccessScreen"
 export const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<SuccessScreen />} />
+      <Route path="/" element={<StartScreen />} />
       <Route path="/Login" element={<Login />} />
       <Route path="/Welcome" element={<Welcome />} />
       <Route path="/Company" element={<Companys />} />
       <Route path="/Catalogue" element={<Catalogue />} />
       <Route path="/Company/Cart" element={<Cart prev="company" />} />
       <Route path="/Catalogue/Cart" element={<Cart prev="catalogue" />} />
-      <Route path="/Aca" element={<Product type={'view'} />} />
+      <Route path="/Preview" element={<Product type={'view'} />} />
+      <Route path="/Succes" element={<SuccessScreen />} />
     </Routes>
   )
 }
