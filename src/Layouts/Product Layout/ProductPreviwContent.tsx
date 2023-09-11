@@ -5,12 +5,19 @@ import './Preview/Preview.css'
 import { useSelector } from "react-redux"
 import { RootState } from "../../App/store"
 import { ProductPreview } from "./Preview/ProductPreview"
+import getItemById from "../../Hooks/getItemById"
 
-export const ProductPreviewContent = () => {
+interface Props {
+    id: number
+}
+
+export const ProductPreviewContent = ({ id }: Props) => {
 
     const apiItem = useSelector((store: RootState) => store.items.items)
 
-    const item = apiItem[0]
+    const item = getItemById(id, apiItem)
+
+    if (item === undefined) return null
 
     return (
         <>

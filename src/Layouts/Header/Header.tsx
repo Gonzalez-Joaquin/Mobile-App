@@ -6,6 +6,7 @@ import './Header.css'
 
 interface Props {
     header: 'welcome' | 'app' | 'peviewProduct' | 'catalogue',
+    to?: 'Catalogue' | 'Company',
 }
 
 const Welcome = () => {
@@ -39,11 +40,15 @@ const App = () => {
     )
 }
 
-const Catalogue = () => {
+interface Catalogue {
+    to?: 'Catalogue' | 'Company',
+}
+
+const Catalogue = ({ to }: Catalogue) => {
     return (
         <>
             <div className="hApp-ctn catalogue-header flex">
-                <Link to={'/Company'}>
+                <Link to={`/${to}`}>
                     <Icon icon="arrow-left" style_color="icon-gris-medio" />
                 </Link>
                 <Text type='p' style_type='text-subtitle' size='text-medium' content='Catálogo' styles_color='text-gris-oscuro' />
@@ -70,7 +75,7 @@ const PeviewProduct = () => {
     )
 }
 
-export const Header = ({ header }: Props) => {
+export const Header = ({ header, to }: Props) => {
     return (
         <>
             <header className="header flex">
@@ -84,7 +89,7 @@ export const Header = ({ header }: Props) => {
                     <PeviewProduct />
                 )}
                 {header === 'catalogue' && (
-                    <Catalogue />
+                    <Catalogue to={to} />
                 )}
             </header>
         </>

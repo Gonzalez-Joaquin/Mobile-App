@@ -16,7 +16,7 @@ export const itemsSlice = createSlice({
             state.isLoading = true
         },
         setItems: (state, action) => {
-            state.isLoading = false
+            state.isLoading = true
             state.items = action.payload.items
         },
     }

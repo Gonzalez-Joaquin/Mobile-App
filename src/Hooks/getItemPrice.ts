@@ -13,8 +13,6 @@ const getItemPrice = (items: ApiItem[], carrito: CarritoItems[]) => {
         })
     })
 
-
-
     return price;
 }
 

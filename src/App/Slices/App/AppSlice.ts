@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit"
 import { appState } from "../../../Interfaces/AppInterface"
 
 const initialState: appState = {
-    carrito: []
+    carrito: [],
+    search: ''
 }
 
 export const appSlice = createSlice({
@@ -35,8 +36,14 @@ export const appSlice = createSlice({
         },
         removeItem: (state, action) => {
             state.carrito = state.carrito.filter(item => item.id !== action.payload)
+        },
+        removeAll: (state) => {
+            state.carrito = []
+        },
+        setSearch: (state, action) => {
+            state.search = action.payload
         }
     }
 })
 
-export const { incrementItem, decrementItem, removeItem } = appSlice.actions
+export const { incrementItem, decrementItem, removeItem, removeAll, setSearch } = appSlice.actions

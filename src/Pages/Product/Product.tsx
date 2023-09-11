@@ -1,10 +1,11 @@
-import { ListItem } from "../../Components/Item/ListItem"
+import { useParams } from "react-router-dom"
 import { ProductPreviewContent } from "../../Layouts/Product Layout/ProductPreviwContent"
 
-interface Props {
-    type: 'item' | 'view',
-}
+export const Product = () => {
 
-export const Product = ({ type }: Props) => {
-    return type === 'view' ? <ProductPreviewContent /> : <ListItem />
+    const { id } = useParams()
+
+    const numberId = parseInt(id || '0')
+
+    return <ProductPreviewContent id={numberId} />
 }

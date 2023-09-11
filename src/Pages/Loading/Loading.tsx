@@ -1,9 +1,14 @@
 import { Icon } from "../../Components/Icon/Icon"
 
+import './Loading.css'
+
 export const Loading = () => {
     return (
-        <section className="welcomeArticle flex">
-            <Icon icon="loading" size="icon-large" />
-        </section>
+        <div className="loadingItems flex">
+            <div className="loadingShapeImg">
+                <div className="loadingShapeImg-inside"></div>
+            </div>
+            .loadingShape
+        </div>
     )
 }
