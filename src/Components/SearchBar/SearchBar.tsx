@@ -8,7 +8,6 @@ import { setSearch } from '../../App/Slices/App/AppSlice'
 export const SearchBar = () => {
     const dispatch = useDispatch()
 
-    const [iconState, setIconState] = useState(true)
     const [searchValue, setSearchValue] = useState('')
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -21,17 +20,15 @@ export const SearchBar = () => {
             dispatch(setSearch(searchValue))
         }, 500)
 
-        searchValue === '' ? setIconState(true) : setIconState(false)
-
         return () => clearTimeout(timer)
     }, [searchValue])
 
     return (
         <>
             <form className="searchBar-form" onSubmit={e => handleSubmit(e)}>
-                <Icon icon={`search searchIcon ${iconState ? '' : 'inactive'}`} style_color='icon-gris-medio' />
-                <input className='input-search' name='search' id='search' onChange={e => setSearchValue(e.target.value)} autoComplete='off' onFocus={() => setIconState(false)} />
-                <Icon icon={`settings-sliders settingsIcon ${iconState ? '' : 'inactive'}`} style_color='icon-gris-medio' />
+                <Icon icon={`search searchIcon`} style_color='icon-gris-medio' />
+                <input className='input-search' name='search' id='search' onChange={e => setSearchValue(e.target.value)} autoComplete='off' />
+                <Icon icon={`settings-sliders settingsIcon`} style_color='icon-gris-medio' />
             </form>
         </>
     )
