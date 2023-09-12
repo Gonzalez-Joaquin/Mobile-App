@@ -73,12 +73,3 @@
 .textshow {
   margin-top: 3px;
 }
-
-@keyframes changeValue {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-10px);
-  }
-}
