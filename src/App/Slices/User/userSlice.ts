@@ -29,6 +29,7 @@ export const userSlice = createSlice({
         loginUserData: (state) => {
             state.isLoading = false
             state.login = true
+            localStorage.setItem("login", "true")
         }
     }
 })

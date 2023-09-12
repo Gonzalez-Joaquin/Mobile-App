@@ -73,3 +73,29 @@
 .textshow {
   margin-top: 3px;
 }
+
+.plusanimation {
+  animation: plusanimation 0.25s
+}
+
+.minusanimation {
+  animation: minusanimation 0.25s
+}
+
+@keyframes minusanimation {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(8px)
+  }
+}
+
+@keyframes plusanimation {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-8px)
+  }
+}
