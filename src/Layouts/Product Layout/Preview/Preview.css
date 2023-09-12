@@ -55,21 +55,8 @@
   bottom: 0;
   padding: 36px;
   width: 100%;
-  height: 65%;
-  border-radius: 16px 16px 0px 0px;
+  height: 100%;
   background: var(--blanco);
-
-  animation: pPArticleFadeIn 0.7s 0.2s ease-out forwards;
-}
-
-@keyframes pPArticleFadeIn {
-  0% {
-    height: 65%;
-  }
-  100% {
-    border-radius: 0;
-    height: 100%;
-  }
 }
 
 @keyframes userButtonOut {
