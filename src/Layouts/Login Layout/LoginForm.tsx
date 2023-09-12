@@ -20,7 +20,6 @@ export const LoginForm = () => {
     const [buttonState, setButtonState] = useState(Boolean)
     const [userName, setUserName] = useState('johnd')
     const [password, setPassword] = useState('m38rmF$')
-    const [checkBox, setCheckBox] = useState('')
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -53,7 +52,7 @@ export const LoginForm = () => {
                     <InputForm label={'Usuario'} placeHolder="Ingresa tu usuario" type="text" onChange={(e: string) => setUserName(e)} />
                     <InputForm label={'contraseña'} placeHolder={'Ingresa tu contraseña'} type={'password'} onChange={(e: string) => setPassword(e)} />
                     <div className="formFiel-item flex">
-                        <InputForm label={'Recordame'} type={'checkbox'} onChange={(e: string) => setCheckBox(e)} />
+                        <InputForm label={'Recordame'} type={'checkbox'} onChange={() => console.log('hola')} />
                         <Links value={'Recordar contraseña'} onClick={() => console.log('recordar contraseña')} />
                     </div>
                     <div className="form-field-button flex">
