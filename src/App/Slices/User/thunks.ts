@@ -24,7 +24,7 @@ const loginUser = (username: string, password: string) => {
 
         // Post true
         if (response === 200) {
-            dispatch((loginUserData()))
+            dispatch((loginUserData(username)))
         }
     }
 }

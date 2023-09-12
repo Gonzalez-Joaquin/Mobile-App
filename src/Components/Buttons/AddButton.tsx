@@ -56,7 +56,7 @@ export const AddButton = (props: Props) => {
       <div>
         <button className={`AddButton ${ButtonState === 'open' ? 'buttonactive' : ''} ${ButtonState === 'unfocused' ? 'unfocused' : ''}`} onClick={handleClick}>
           {count > 1 && (
-            <svg className={`iconhide ${ButtonState === 'open' ? 'iconshow' : ''} minus `} onClick={() => dispatch(decrementItem(props.item.id))} width="14" height="2" viewBox="0 0 14 2" fill="#fffff" xmlns="http://www.w3.org/2000/svg">
+            <svg className={`iconhide ${ButtonState === 'open' ? 'iconshow' : ''}`} onClick={() => dispatch(decrementItem(props.item.id))} width="14" height="2" viewBox="0 0 14 2" fill="#fffff" xmlns="http://www.w3.org/2000/svg">
               <line y1="1.25" x2="14" y2="1.25" stroke="white" strokeWidth="1.5" />
             </svg>
           )}

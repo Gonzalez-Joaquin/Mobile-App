@@ -3,6 +3,8 @@ import { CartCounter } from '../../Components/CartCounter/CartCounter'
 import { Icon } from '../../Components/Icon/Icon'
 import { Text } from '../../Components/Typography/Typography'
 import './Header.css'
+import { Profile } from '../../Components/Profile/Profile'
+import { useState } from 'react'
 
 interface Props {
     header: 'welcome' | 'app' | 'peviewProduct' | 'catalogue',
@@ -10,22 +12,29 @@ interface Props {
 }
 
 const Welcome = () => {
+
+    const [profile, setProfile] = useState(false)
+
     return (
         <>
-            <div className="hWelcome flex">
+            <div className="hWelcome flex" onClick={() => setProfile(!profile)}>
                 <button type="button" className="userButton flex">
                     <Icon icon='user' />
                 </button>
             </div>
+            <Profile getmode={profile} />
         </>
     )
 }
 
 const App = () => {
+
+    const [profile, setProfile] = useState(false)
+
     return (
         <>
             <div className="hApp-ctn flex">
-                <button type="button" className="userButton flex">
+                <button type="button" className="userButton flex" onClick={() => setProfile(!profile)}>
                     <Icon icon='user' />
                 </button>
                 <Text type='p' style_type='text-subtitle' size='text-medium' content='Sucursal escaneada' styles_color='text-blanco' />
@@ -36,6 +45,7 @@ const App = () => {
                     <CartCounter />
                 </div>
             </div>
+            <Profile getmode={profile} />
         </>
     )
 }
