@@ -37,7 +37,7 @@ export const Cart = ({ prev }: Props) => {
                     <Header header="catalogue" to="Catalogue" />
                     <div className="cartAside-item top flex">
                         <Text type="h3" style_type="text-title" content="Mi pedido" size="text-medium" styles_color="text-gris-oscuro" />
-                        <Link to={'/Catalogue'}>
+                        <Link to={'/Cart/Catalogue'}>
                             <Icon icon="ballot" style_color="icon-violeta" />
                         </Link>
                     </div>
@@ -49,7 +49,7 @@ export const Cart = ({ prev }: Props) => {
                             <Text type="h4" style_type="text-subtitle" styles_color="text-gris-claro" content="Total" size="text-pre-medium" />
                             <Text type="h4" style_type="text-subtitle" styles_color="text-gris-oscuro" content={`${price}`} />
                         </div>
-                        <Button type="button" type_style="violeta" size="auto" value="Confiarmar pedido" onClick={() => {
+                        <Button type="button" type_style="violeta" size="auto" value="Confirmar pedido" onClick={() => {
                             navigate('/Succes')
                             disptach(removeAll())
                         }} />
