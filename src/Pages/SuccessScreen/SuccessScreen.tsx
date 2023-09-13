@@ -32,7 +32,7 @@ export const SuccessScreen = () => {
         </svg>
         <img src="./Png/Success.png" className="successbag" />
         <br />
-        <p className="pedidocompletado">¡Listo! pedido completado. Ahora puedes dirigirte a la caja." </p>
+        <p className="pedidocompletado">¡Listo! pedido completado. Ahora puedes dirigirte a la caja.</p>
         <br /> <br />
         <p className="pedido">Pedido</p>
         <p className="pedidonum">{`Nº ${getNumber(4)}-${getNumber(8)}`}</p>
