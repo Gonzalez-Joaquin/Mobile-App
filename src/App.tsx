@@ -6,6 +6,7 @@ import { fetchItems } from './App/Slices/Items/thunks'
 import './Styles/App-Style.css'
 import { useDispatch } from 'react-redux'
 import { AppDispatch } from './App/store'
+import { setUsername } from './App/Slices/User/userSlice'
 
 export const App = () => {
 
@@ -13,6 +14,7 @@ export const App = () => {
 
   useEffect(() => {
     dispatch(fetchItems())
+    dispatch(setUsername())
   }, [])
 
   return (

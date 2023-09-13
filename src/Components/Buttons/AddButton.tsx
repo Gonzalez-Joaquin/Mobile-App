@@ -22,11 +22,6 @@ export const AddButton = (props: Props) => {
   const [count, setCount] = useState(getItemQuantity(props.item.id, carrito))
   const [animation, setanimation] = useState("")
 
-  const handleClick = () => {
-    setButtonState('open')
-    props.flagsetter(props.item.id)
-  }
-
   useEffect(() => {
     if (props.flag !== props.item.id) {
       if (count > 0) {
@@ -66,7 +61,14 @@ export const AddButton = (props: Props) => {
     setTimeout(() => {
       setanimation("")
     }, 250);
-    
+  }
+
+  const handleClick = () => {
+    if(ButtonState==="closed"){
+      plus()
+    }
+    setButtonState('open')
+    props.flagsetter(props.item.id)
   }
 
 
@@ -75,9 +77,11 @@ export const AddButton = (props: Props) => {
       <div>
         <button className={`AddButton ${ButtonState === 'open' ? 'buttonactive' : ''} ${ButtonState === 'unfocused' ? 'unfocused' : ''}`} onClick={handleClick}>
           {count > 1 && (
-            <svg className={`iconhide ${ButtonState === 'open' ? 'iconshow' : ''}`} onClick={minus} width="14" height="2" viewBox="0 0 14 2" fill="#fffff" xmlns="http://www.w3.org/2000/svg">
+            <div className='minusbutton' onClick={minus}>
+            <svg className={`iconhide ${ButtonState === 'open' ? 'iconshow' : ''}`} width="14" height="2" viewBox="0 0 14 2" fill="#fffff" xmlns="http://www.w3.org/2000/svg">
               <line y1="1.25" x2="14" y2="1.25" stroke="white" strokeWidth="1.5" />
             </svg>
+            </div>
           )}
           {count === 1 && (
             <svg className={`iconhide ${ButtonState === 'open' ? 'iconshow' : ''}`} onClick={minus} width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -85,9 +89,11 @@ export const AddButton = (props: Props) => {
             </svg>
           )}
           <span className={`addbuttontext iconhide ${ButtonState === 'open' ? 'iconshow' : ''} ${ButtonState === 'unfocused' ? 'iconshow textshow' : ''} ${animation === 'plus' ? 'plusanimation' : ''} ${animation === 'minus' ? 'minusanimation' : ''}`}>{count}</span>
-          <svg className={`${ButtonState === 'unfocused' ? 'iconhide' : ''}`} onClick={plus} width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div className='plusbutton' onClick={ButtonState === "open" ? plus : undefined}>
+          <svg className={`${ButtonState === 'unfocused' ? 'iconhide' : ''}`} width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6.56255 0V6.56255H0V8.43745H6.56255V15H8.43745V8.43745H15V6.56255H8.43745V0H6.56255Z" fill="white" />
           </svg>
+          </div>
         </button>
       </div>
     )
@@ -96,13 +102,17 @@ export const AddButton = (props: Props) => {
     return (
       <div>
         <div className="ItemButtons">
-          <svg className="minus" onClick={() => dispatch(decrementItem(props.item.id))} width="11" height="2" viewBox="0 0 11 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className='minusbutton2' onClick={minus}>
+          <svg className="minus" width="11" height="2" viewBox="0 0 11 2" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line x1="-6.55671e-08" y1="1.25" x2="11" y2="1.25" stroke="#98A0B6" strokeWidth="1.5" />
           </svg>
-          <span className="normalcount">{count}</span>
-          <svg className="plus" onClick={() => dispatch(incrementItem(props.item.id))} width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          </div>
+          <span className={`normalcount ${animation === 'plus' ? 'plusanimation' : ''} ${animation === 'minus' ? 'minusanimation' : ''}`}>{count}</span>
+          <div className='plusbutton2' onClick={plus}>
+          <svg className="plus" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4.81254 0V4.81254H0V6.18746H4.81254V11H6.18746V6.18746H11V4.81254H6.18746V0H4.81254Z" fill="#8381FF" />
           </svg>
+          </div>
         </div>
       </div>
     )

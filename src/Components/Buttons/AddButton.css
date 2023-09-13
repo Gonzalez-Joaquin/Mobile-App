@@ -99,3 +99,23 @@
     transform: translateY(-8px)
   }
 }
+
+.minusbutton {
+  height: 80%;
+  margin-top: 3px;
+}
+
+.plusbutton {
+  height: 80%;
+  margin-top: 10px;
+}
+
+.minusbutton2 {
+  height: 80%;
+  margin-bottom: 7px;
+}
+
+.plusbutton2 {
+  height: 80%;
+  margin-top: 2px;
+}
