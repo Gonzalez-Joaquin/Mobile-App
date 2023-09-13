@@ -31,13 +31,18 @@ export const userSlice = createSlice({
             state.login = true
             state.users.username = action.payload
             localStorage.setItem("login", "true")
+            localStorage.setItem("username", action.payload)
         },
         userLogOut: (state) => {
             state.login = false
             state.users.username = ''
             localStorage.setItem('login', 'false')
+        },
+        setUsername: (state) => {
+            state.users.username = localStorage.getItem("username") || ''
+            console.log(state.users.username)
         }
     }
 })
 
-export const { startLoadingUsers, endLoadingUsers, loginUserData, userLogOut } = userSlice.actions
+export const { startLoadingUsers, endLoadingUsers, loginUserData, userLogOut, setUsername } = userSlice.actions
