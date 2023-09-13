@@ -16,25 +16,54 @@
 }
 
 .searchIcon {
-  opacity: 1;
-  visibility: visible;
-
   top: 0;
   left: 0;
   position: absolute;
   margin: 11px 11px 0px 16px;
-
-  transition: ease 0.2s;
 }
 
-.settingsIcon {
-  opacity: 1;
-  visibility: visible;
-
+.settings-container {
+  background-color: var(--gris-claro2);
   top: 0;
   right: 0;
+  width: 30px;
+  height: 30px;
   position: absolute;
-  margin: 11px 11px 20px 0px;
+  margin: 11px 11px 16px 0px;
+}
 
-  transition: ease 0.2s;
+.btn-settings,
+.btn-search-by-type {
+  background: 0;
+  outline: 0;
+  border: 0;
+}
+
+.setting-inside {
+  opacity: 0;
+  visibility: hidden;
+  background: var(--gris-claro2);
+  top: 20px;
+  right: 0;
+  position: absolute;
+  width: 100px;
+  height: 0;
+  padding-block: 10px;
+  padding-inline: 20px;
+  transition: ease-out 0.3s;
+}
+
+.setting-inside.flex {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.setting-inside.active {
+  opacity: 1;
+  visibility: visible;
+  height: 90px;
+}
+
+.btn-search-by-type {
+  width: 100%;
 }

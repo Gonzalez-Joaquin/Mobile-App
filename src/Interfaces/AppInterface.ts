@@ -4,6 +4,6 @@ export interface CarritoItems {
 }
 
 export interface appState {
-    search: string,
+    search: { value: string, type: 'name' | 'id' },
     carrito: CarritoItems[]
 }
