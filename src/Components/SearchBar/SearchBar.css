@@ -1,4 +1,5 @@
 .searchBar-form {
+  z-index: 100;
   position: relative;
   width: 293px;
   height: 40px;
