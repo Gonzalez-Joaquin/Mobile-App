@@ -64,7 +64,7 @@ export const ProductPreview = ({ item }: Props) => {
                                 <Icon icon="plus" style_color="icon-gris-medio" />
                             </button>
                         </div>
-                        <Text type="h3" style_type="text-title" styles_color="text-gris-oscuro" size="text-medium" content={`$${countProduct === 0 ? item.price : item.price * countProduct}`} />
+                        <Text type="h3" style_type="text-title" styles_color="text-gris-oscuro" size="text-medium" content={`$${countProduct === 0 ? item.price.toFixed(2) : (item.price * countProduct).toFixed(2)}`} />
                     </div>
                     <Button type="button" type_style="violeta" value="Actualizar Carrito" size="auto" onClick={() => handleClick()} />
                 </div>
