@@ -20,6 +20,11 @@ export const SearchBar = () => {
         dispatch(setSearch({ value: searchValue, type: type }))
     }
 
+    const handleClick = (value: 'name' | 'id') => {
+        setType(value)
+        setMode(!mode)
+    }
+
     useEffect(() => {
         const timer = setTimeout(() => {
             dispatch(setSearch({ value: searchValue, type: type }))
@@ -38,10 +43,10 @@ export const SearchBar = () => {
                         <Icon icon={`${mode ? 'cross' : 'settings-sliders'} settingsIcon`} style_color='icon-gris-medio' />
                     </button>
                     <div className={`setting-inside flex ${mode ? 'active' : ''}`}>
-                        <button type="button" className="btn-search-by-type" onClick={() => setType('name')}>
+                        <button type="button" className="btn-search-by-type" onClick={() => handleClick('name')}>
                             <Text type='h3' style_type='text-button' content='Nombre' styles_color='text-gris-oscuro' />
                         </button>
-                        <button type="button" className="btn-search-by-type" onClick={() => setType('id')}>
+                        <button type="button" className="btn-search-by-type" onClick={() => handleClick('id')}>
                             <Text type='h3' style_type='text-button' content='Código' styles_color='text-gris-oscuro' />
                         </button>
                     </div>

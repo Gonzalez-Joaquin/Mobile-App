@@ -1,4 +1,5 @@
 .searchBar-form {
+  z-index: 100;
   position: relative;
   width: 293px;
   height: 40px;
@@ -37,6 +38,14 @@
   background: 0;
   outline: 0;
   border: 0;
+}
+
+.btn-search-by-type:is(:hover, :active) {
+  cursor: pointer;
+
+  & .text-gris-oscuro {
+    color: var(--violeta);
+  }
 }
 
 .setting-inside {
