@@ -5,7 +5,7 @@ import { userState } from "../../../Interfaces/userInterface"
 const initialState: userState = {
     isLoading: false,
     login: false,
-    users: {
+    users: [{
         id: 0,
         email: '',
         phone: '',
@@ -13,7 +13,7 @@ const initialState: userState = {
         username: '',
         name: { firstname: '', lastname: '', },
         address: { city: '', geolocation: { lat: '', long: '' }, number: 0, street: '', zipcode: '' },
-    }
+    }]
 }
 
 export const userSlice = createSlice({
@@ -26,16 +26,12 @@ export const userSlice = createSlice({
         endLoadingUsers: (state) => {
             state.isLoading = false
         },
-        loginUserData: (state, action) => {
+        loginUserData: (state) => {
             state.isLoading = false
-            state.users.username = action.payload
             state.login = true
-        },
-        userLogOut: (state) => {
-            state.users.username = ''
-            state.login = false
+            localStorage.setItem("login", "true")
         }
     }
 })
 
-export const { startLoadingUsers, endLoadingUsers, loginUserData, userLogOut } = userSlice.actions
+export const { startLoadingUsers, endLoadingUsers, loginUserData } = userSlice.actions

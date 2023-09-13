@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom"
 import { StartScreen } from "../Pages/StartScreen/StartScreen"
 import { Login } from "../Pages/Login/Login"
 import { Companys } from "../Pages/Companys/Companys"
@@ -7,8 +7,29 @@ import { Product } from "../Pages/Product/Product"
 import { Catalogue } from "../Pages/Catalogue/Catalogue"
 import { Cart } from "../Pages/Cart/Cart"
 import { SuccessScreen } from "../Pages/SuccessScreen/SuccessScreen"
+import { useEffect } from "react"
+import { useSelector } from "react-redux"
+import { RootState } from "../App/store"
 
 export const AppRouter = () => {
+
+  const PublicRoutes = ["/", "/Login"]
+
+  const login = localStorage.getItem("login") === "true" ? true : false
+  const navigate = useNavigate()
+
+  const location = useLocation()
+
+  useEffect(() => {
+
+    if(login && PublicRoutes.includes(location.pathname)){
+      navigate("/Welcome")
+    }
+    if(!login && !PublicRoutes.includes(location.pathname)){
+      navigate("/Login")
+    }
+  }, [location])
+  
   return (
     <Routes>
       <Route path="/" element={<StartScreen />} />
