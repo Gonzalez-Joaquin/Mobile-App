@@ -39,6 +39,14 @@
   border: 0;
 }
 
+.btn-search-by-type:is(:hover, :active) {
+  cursor: pointer;
+
+  & .text-gris-oscuro {
+    color: var(--violeta);
+  }
+}
+
 .setting-inside {
   opacity: 0;
   visibility: hidden;
