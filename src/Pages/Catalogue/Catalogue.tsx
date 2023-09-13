@@ -4,12 +4,16 @@ import { ProductContainer } from "../../Layouts/Catalogue Layout/ProductContaine
 import { CompanyCard } from "../../Layouts/Companys Layout/CompanyCard"
 import { Header } from "../../Layouts/Header/Header"
 
+interface Props {
+    prev: 'company' | 'cart'
+}
+
 import './Catalogue.css'
 
-export const Catalogue = () => {
+export const Catalogue = ({ prev }: Props) => {
     return (
         <>
-            <article className="catalogueArticle flex">
+            <article className={`catalogueArticle flex ${prev}`}>
                 <CompanyCard />
                 <div className="catalogue-container flex">
                     <Header header="catalogue" to="Company" />

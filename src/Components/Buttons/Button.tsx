@@ -27,7 +27,7 @@ export const Button = ({ onClick, type, type_style, value, icon_right, icon_left
         <>
             <button className={classNames} onClick={onClick} type={type}>
                 {icon_left !== '' ? <Icon icon={icon_left || ''} /> : ''}
-                <Text type={'p'} style_transform={'text-capitalize'} style_type={'text-button'} content={value} size={'text-small'} styles_color={'text-blanco'} />
+                <Text type={'p'} style_type={'text-button'} content={value} size={'text-small'} styles_color={'text-blanco'} />
                 {icon_right !== '' ? <Icon icon={icon_right || ''} /> : ''}
             </button>
         </>

@@ -103,7 +103,6 @@ export const AddButton = (props: Props) => {
           <svg className="plus" onClick={() => dispatch(incrementItem(props.item.id))} width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4.81254 0V4.81254H0V6.18746H4.81254V11H6.18746V6.18746H11V4.81254H6.18746V0H4.81254Z" fill="#8381FF" />
           </svg>
-
         </div>
       </div>
     )

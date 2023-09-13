@@ -27,12 +27,17 @@ export const userSlice = createSlice({
             state.isLoading = false
         },
         loginUserData: (state, action) => {
-            state.users.username = action.payload
             state.isLoading = false
             state.login = true
+            state.users.username = action.payload
             localStorage.setItem("login", "true")
+        },
+        userLogOut: (state) => {
+            state.login = false
+            state.users.username = ''
+            localStorage.setItem('login', 'false')
         }
     }
 })
 
-export const { startLoadingUsers, endLoadingUsers, loginUserData } = userSlice.actions
+export const { startLoadingUsers, endLoadingUsers, loginUserData, userLogOut } = userSlice.actions

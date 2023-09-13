@@ -1,0 +1,85 @@
+.profile-container {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  transform: translateX(-100%);
+  transition: ease-out 0.7s;
+}
+
+.profile-container.active {
+  transform: translateX(0%);
+}
+
+.card-left {
+  z-index: 5;
+  padding-top: 20px;
+  min-width: 278px;
+  width: 100%;
+  height: 100%;
+  background: var(--blanco);
+}
+
+.card-right {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  backdrop-filter: url(filters.svg#filter) blur(4px) brightness(80%);
+}
+
+.card-right.inactive {
+  transform: translateX(0%);
+  animation: fadeOutLeft 0.5s ease-out forwards;
+}
+
+.card-right.active {
+  transform: translateX(-100%);
+  animation: fadeInLeft 0.5s 0.5s ease-out forwards;
+}
+
+.card-left.flex {
+  justify-content: flex-start;
+  gap: 75px;
+  flex-direction: column;
+}
+
+.card-top {
+  padding-inline: 50px;
+  width: 100%;
+}
+
+.card-top.flex {
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.shapeProfileImg {
+  width: 57.5px;
+  height: 57.5px;
+  border-radius: 50%;
+  background: var(--gris-claro2);
+}
+
+.btn-logout {
+  outline: 0;
+  background: 0;
+  border: 0;
+  padding: 14px;
+  width: 100%;
+}
+
+.btn-logout.flex {
+  gap: 10px;
+}
+
+@keyframes fadeInLeft {
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fadeOutLeft {
+  to {
+    transform: translateX(-100%);
+  }
+}
