@@ -30,8 +30,12 @@ export const userSlice = createSlice({
             state.isLoading = false
             state.users.username = action.payload
             state.login = true
+        },
+        userLogOut: (state) => {
+            state.users.username = ''
+            state.login = false
         }
     }
 })
 
-export const { startLoadingUsers, endLoadingUsers, loginUserData } = userSlice.actions
+export const { startLoadingUsers, endLoadingUsers, loginUserData, userLogOut } = userSlice.actions

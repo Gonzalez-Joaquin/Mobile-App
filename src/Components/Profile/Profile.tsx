@@ -1,10 +1,12 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { Text } from "../Typography/Typography"
 import { RootState } from "../../App/store"
 import { Icon } from "../Icon/Icon"
 import { useEffect, useState } from "react"
 
 import './Profie.css'
+import { userLogOut } from "../../App/Slices/User/userSlice"
+import { useNavigate } from "react-router-dom"
 
 interface Props {
     getmode: boolean
@@ -13,11 +15,18 @@ interface Props {
 export const Profile = ({ getmode }: Props) => {
 
     const [mode, setMode] = useState(false)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
     const username = useSelector((store: RootState) => store.users.users.username)
 
     useEffect(() => {
         setMode(getmode)
     }, [getmode])
+
+    const handleClick = () => {
+        dispatch(userLogOut())
+        navigate('/')
+    }
 
     return (
         <div className={`profile-container flex ${mode ? 'active' : ''}`}>
@@ -35,15 +44,13 @@ export const Profile = ({ getmode }: Props) => {
                     </div>
                 </div>
                 <div className="card-bottom">
-                    <button type="button" className="btn-logout flex">
+                    <button type="button" className="btn-logout flex" onClick={() => handleClick()} >
                         <Icon icon="sign-out-alt" style_color="icon-gris-medio" />
                         <Text type="h3" style_type="text-title" styles_color="text-gris-oscuro" size="text-small" content="Cerrar sesión" />
                     </button>
                 </div>
             </div>
-            <div className="card-right" onClick={() => setMode(!mode)}>
-
-            </div>
+            <div className={`card-right ${mode ? 'active' : 'inactive'}`} onClick={() => setMode(!mode)}></div>
         </div>
     )
 }
