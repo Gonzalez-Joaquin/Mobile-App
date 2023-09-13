@@ -10,3 +10,29 @@
     color: var(--gris-claro);
   }
 }
+
+.plus {
+  animation: plus 0.25s
+}
+
+.minus {
+  animation: minus 0.25s
+}
+
+@keyframes minus {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(8px)
+  }
+}
+
+@keyframes plus {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-8px)
+  }
+}

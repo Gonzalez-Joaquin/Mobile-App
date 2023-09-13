@@ -102,12 +102,18 @@
 
 .minusbutton {
   height: 80%;
+  width: 14px;
   margin-top: 3px;
 }
 
 .plusbutton {
   height: 80%;
   margin-top: 10px;
+}
+
+.trashbutton {
+  margin-top: 3px;
+  width: 14px;
 }
 
 .minusbutton2 {
