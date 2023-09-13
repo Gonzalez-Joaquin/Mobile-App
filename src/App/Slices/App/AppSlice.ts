@@ -3,7 +3,7 @@ import { appState } from "../../../Interfaces/AppInterface"
 
 const initialState: appState = {
     carrito: [],
-    search: ''
+    search: { value: '', type: 'name' }
 }
 
 export const appSlice = createSlice({

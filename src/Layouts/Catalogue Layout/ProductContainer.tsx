@@ -5,7 +5,7 @@ import { ListItem } from "../../Components/Item/ListItem"
 import { ApiItem } from "../../Interfaces/ItemsInterface"
 import getItemsBySearch from "../../Hooks/getItemsBySearch"
 import { Loading } from "../../Pages/Loading/Loading"
-import { Loading_Button } from "../../Components/Buttons/Loading_Button"
+import searchItemById from "../../Hooks/searchItemById"
 
 export const ProductContainer = () => {
 
@@ -19,7 +19,11 @@ export const ProductContainer = () => {
     const [flag, setflag] = useState(-1)
 
     useEffect(() => {
-        searchValue === '' ? setItems(all_items) : setItems(getItemsBySearch(searchValue, all_items))
+        searchValue.value === ''
+            ? setItems(all_items)
+            : searchValue.type === 'name'
+                ? setItems(getItemsBySearch(searchValue.value, all_items))
+                : setItems(searchItemById(searchValue.value, all_items))
     }, [searchValue])
 
     useEffect(() => {
