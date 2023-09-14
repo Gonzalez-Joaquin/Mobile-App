@@ -40,7 +40,6 @@ export const userSlice = createSlice({
         },
         setUsername: (state) => {
             state.users.username = localStorage.getItem("username") || ''
-            console.log(state.users.username)
         }
     }
 })

@@ -31,7 +31,7 @@ export const ListItem = ({ item, flag, flagsetter, type }: Props) => {
           <div className="listItemDataText">
             <p id="listitemtitle" className="listitemtitle">{`${item.title.length >= 27 ? item.title.slice(0, 20) + "..." : item.title}`}</p>
             <p className="listitemid">Código {item.id}</p>
-            <p className="listitemprice">{item.price}</p>
+            <p className="listitemprice">${item.price}</p>
           </div>
         </div>
       </div>

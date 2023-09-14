@@ -47,7 +47,7 @@ export const Cart = ({ prev }: Props) => {
                     <div className={`cartAside-item bottom flex ${carrito.length > 0 ? 'active' : ''}`}>
                         <div className="cA-price flex">
                             <Text type="h4" style_type="text-subtitle" styles_color="text-gris-claro" content="Total" size="text-pre-medium" />
-                            <Text type="h4" style_type="text-subtitle" styles_color="text-gris-oscuro" content={`${price}`} />
+                            <Text type="h4" style_type="text-subtitle" styles_color="text-gris-oscuro" content={`$${price}`} />
                         </div>
                         <Button type="button" type_style="violeta" size="auto" value="Confirmar pedido" onClick={() => {
                             navigate('/Succes')

@@ -13,7 +13,7 @@ const getItemPrice = (items: ApiItem[], carrito: CarritoItems[]) => {
         })
     })
 
-    return price.toFixed(2);
+    return parseFloat(price.toFixed(2));
 }
 
 export default getItemPrice

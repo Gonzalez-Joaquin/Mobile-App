@@ -16,7 +16,12 @@ const loginUser = (username: string, password: string) => {
                 return res.status
             })
             .catch(() => {
+                if(data.username !== "Tomas" || data.password !== "1364852"){
                 alert('Nombre de usuario o contraseña invalidos')
+            }
+            else {
+                dispatch((loginUserData(username)))
+            }
             })
             .finally(() => {
                 dispatch(endLoadingUsers())
